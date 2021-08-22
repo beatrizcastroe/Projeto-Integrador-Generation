@@ -1,10 +1,10 @@
-create database db_exerciciopi;
+tb_usuariocreate database db_exerciciopi;
 use db_exerciciopi;
 
 create table tb_usuario (
 	id_usuario bigint primary key auto_increment,
 	nome_completo varchar(255) not null,
-    cpf varchar (15) not null,
+    cpf  CHAR (11) UNIQUE not null,
     datanasc date not null,
     email varchar (255) not null,
 	senha varchar (30) not null,
@@ -13,6 +13,8 @@ create table tb_usuario (
 	estado varchar (30)not null,
 	cidade varchar (30)not null
 );
+
+SELECT * FROM tb_usuario;
 
 create table tb_categoria (
 	id_categoria bigint primary key auto_increment,
