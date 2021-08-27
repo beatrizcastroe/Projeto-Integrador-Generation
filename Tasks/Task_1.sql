@@ -1,5 +1,5 @@
-tb_usuariocreate database db_exerciciopi;
-use db_exerciciopi;
+create database db_ecommerce;
+use db_ecommerce;
 
 create table tb_usuario (
 	id_usuario bigint primary key auto_increment,
@@ -11,14 +11,14 @@ create table tb_usuario (
 	endereco varchar (255) not null,
 	cep varchar (30)not null,
 	estado varchar (30)not null,
-	cidade varchar (30)not null
+	cidade varchar (30)not null,
+    tp_usuario varchar(30)not null
 );
 
 SELECT * FROM tb_usuario;
 
 create table tb_categoria (
 	id_categoria bigint primary key auto_increment,
-	categoria varchar (255) not null, -- (PARA VOCÊ, SUA CASA)
 	nome_categoria varchar (255) not null, -- ( MODA, CUIDADOS PESSOAIS)
 	nome_subCategoria varchar (255) not null-- (BOLSAS....)
 );
