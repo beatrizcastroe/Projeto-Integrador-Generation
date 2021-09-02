@@ -1,12 +1,16 @@
 package org.ecommerce.demo.model;
 
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -14,6 +18,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
@@ -57,6 +62,10 @@ public class Usuario {
 	@NotBlank
 	private String tipoUsuario;
 
+	@OneToMany(mappedBy = "usuarioRelacionado",cascade=CascadeType.REMOVE)
+	@JsonIgnoreProperties({"usuarioRelacionado"})
+	private List <Produto> produto=new ArrayList<>();
+	
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
@@ -151,6 +160,14 @@ public class Usuario {
 
 	public void setTipoUsuario(String tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
+	}
+
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 
 
