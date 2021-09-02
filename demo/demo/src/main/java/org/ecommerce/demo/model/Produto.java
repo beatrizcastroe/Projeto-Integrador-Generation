@@ -50,7 +50,7 @@ public class Produto {
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")
 	@JsonIgnoreProperties({"produto"})
-	private Usuario usuarioaRelacionada;
+	private Usuario usuarioRelacionado;
 	
 	public Long getIdProduto() {
 		return idProduto;
@@ -100,12 +100,12 @@ public class Produto {
 		this.categoriaRelacionada = categoriaRelacionada;
 	}
 
-	public Usuario getUsuarioaRelacionada() {
-		return usuarioaRelacionada;
+	public Usuario getUsuarioRelacionado() {
+		return usuarioRelacionado;
 	}
 
-	public void setUsuarioaRelacionada(Usuario usuarioaRelacionada) {
-		this.usuarioaRelacionada = usuarioaRelacionada;
+	public void setUsuarioaRelacionado(Usuario usuarioRelacionado) {
+		this.usuarioRelacionado = usuarioRelacionado;
 	}	
 	
 }
