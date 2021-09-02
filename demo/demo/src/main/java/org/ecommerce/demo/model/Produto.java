@@ -1,12 +1,18 @@
 package org.ecommerce.demo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Classe utilizada como entidade no banco de dados para a criação dos produtos e seus atributos.
@@ -35,7 +41,12 @@ public class Produto {
 	
 	@NotBlank
 	private Double preco;
-
+	
+	@ManyToOne
+	@JoinColumn(name = "categoria_id")
+	@JsonIgnoreProperties({"produto"})
+	private Categoria categoriaRelacionada;
+	
 	public Long getIdProduto() {
 		return idProduto;
 	}
@@ -75,5 +86,13 @@ public class Produto {
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
+
+	public Categoria getCategoriaRelacionada() {
+		return categoriaRelacionada;
+	}
+
+	public void setCategoriaRelacionada(Categoria categoriaRelacionada) {
+		this.categoriaRelacionada = categoriaRelacionada;
+	}	
 	
 }

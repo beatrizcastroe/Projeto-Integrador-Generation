@@ -1,11 +1,18 @@
 package org.ecommerce.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Classe utilizada como entidade no banco de dados para a criação das categorias.
@@ -27,6 +34,10 @@ public class Categoria {
 	
 	@NotBlank
 	private String nomeSubcategoria;
+	
+	@OneToMany(mappedBy = "categoriaRelacionada", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"categoriaRelacionada"})
+	private List<Produto> produto = new ArrayList<>();
 
 	public Long getIdCategoria() {
 		return idCategoria;
@@ -51,7 +62,13 @@ public class Categoria {
 	public void setNomeSubcategoria(String nomeSubcategoria) {
 		this.nomeSubcategoria = nomeSubcategoria;
 	}
-	
-	
+
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
 	
 }
