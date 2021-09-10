@@ -1,5 +1,6 @@
 package org.ecommerce.demo.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,13 +21,16 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
+
 @Entity
 @Table (name = "tb_usuario")
-public class Usuario {
+public class Usuario  {
 	
+
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idUsuario;
+	
 	
 	@NotBlank
 	private String nome;
@@ -37,7 +41,7 @@ public class Usuario {
 	@NotBlank
 	private String senha;
 	
-	
+	/*
 	@CPF
 	private String cpf;
 	
@@ -60,12 +64,12 @@ public class Usuario {
 	private String estado;
 	
 	@NotBlank
-	private String tipoUsuario;
+	private String tipoUsuario;*/
 
 	@OneToMany(mappedBy = "usuarioRelacionado",cascade=CascadeType.REMOVE)
 	@JsonIgnoreProperties({"usuarioRelacionado"})
 	private List <Produto> produto=new ArrayList<>();
-	
+
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
@@ -80,7 +84,7 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}	
+	}
 
 	public String getEmail() {
 		return email;
@@ -98,70 +102,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public Date getDataNasc() {
-		return dataNasc;
-	}
-
-	public void setDataNasc(Date dataNasc) {
-		this.dataNasc = dataNasc;
-	}
-
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
-	public String getComplemento() {
-		return complemento;
-	}
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
-
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public String getTipoUsuario() {
-		return tipoUsuario;
-	}
-
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
-
 	public List<Produto> getProduto() {
 		return produto;
 	}
@@ -169,6 +109,8 @@ public class Usuario {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
+	
+	
 
 
 }

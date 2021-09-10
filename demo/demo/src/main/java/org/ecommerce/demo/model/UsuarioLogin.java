@@ -2,11 +2,20 @@ package org.ecommerce.demo.model;
 
 public class UsuarioLogin {
 	
+	private Long idUsuario;
 	private String nome;
 	private String email;
 	private String senha;
 	private String token;
 	
+	
+	
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 	public String getNome() {
 		return nome;
 	}
