@@ -1,11 +1,14 @@
 package org.ecommerce.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.ecommerce.demo.model.Usuario;
+import org.ecommerce.demo.model.UsuarioLogin;
 import org.ecommerce.demo.repository.UsuarioRepository;
+import org.ecommerce.demo.service.UsuarioServicos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,6 +28,7 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository repository;
+	private UsuarioServicos servicos;
 	
 	@GetMapping
 	public ResponseEntity<List<Usuario>> findAllUsuario (){
@@ -42,9 +46,26 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/novousuario")
-	public ResponseEntity<Usuario> postUsuario (@Valid @RequestBody Usuario usuario){
-		return ResponseEntity.ok(repository.save(usuario));
+	public ResponseEntity<Object> novoUsuario (@Valid @RequestBody Usuario novoUsuario){
+		Optional<Object> objetoOptional = servicos.cadastrarUsuario(novoUsuario);
+		
+		if (objetoOptional.isEmpty()) {
+			return ResponseEntity.status(400).build();
+		} else {
+			return ResponseEntity.status(201).body(objetoOptional.get());
+		}
 	}
+	
+	@PutMapping("/login")
+	public ResponseEntity<Object> login (@Valid @RequestBody UsuarioLogin usuarioParaAutenticar){
+		Optional<?> objetoOptional = servicos.Login(usuarioParaAutenticar);
+		
+		if (objetoOptional.isEmpty()) {
+			return ResponseEntity.status(400).build();
+		} else {
+			return ResponseEntity.status(201).body(objetoOptional.get());
+		}
+	} 
 	
 	@PutMapping("/atualizarusuario")
 	public ResponseEntity<Usuario> putUsuario (@Valid @RequestBody Usuario usuario){
