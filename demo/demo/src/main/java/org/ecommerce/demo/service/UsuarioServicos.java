@@ -17,6 +17,7 @@ public class UsuarioServicos {
     @Autowired
     UsuarioRepository repositorio;
 
+
     public Optional <Object> cadastrarUsuario (Usuario novoUsuario) {
         return repositorio.findByEmail(novoUsuario.getEmail()).map(usuarioExistente -> {
             return Optional.empty();
