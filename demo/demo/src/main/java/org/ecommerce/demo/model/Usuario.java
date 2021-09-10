@@ -31,18 +31,19 @@ public class Usuario {
 	@NotBlank
 	private String nome;
 	
+	@Email
+	private String email;
+	
+	@NotBlank
+	private String senha;
+	
+	
 	@CPF
 	private String cpf;
 	
 	@Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-BR", timezone = "Brazil/East")
 	private Date dataNasc;
-	
-	@Email
-	private String email;
-	
-	@NotBlank
-	private String senha;
 	
 	@NotBlank
 	private String endereco;
@@ -79,6 +80,22 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public String getCpf() {
@@ -95,22 +112,6 @@ public class Usuario {
 
 	public void setDataNasc(Date dataNasc) {
 		this.dataNasc = dataNasc;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 
 	public String getEndereco() {

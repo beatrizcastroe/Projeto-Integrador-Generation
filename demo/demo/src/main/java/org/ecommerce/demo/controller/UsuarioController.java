@@ -10,6 +10,7 @@ import org.ecommerce.demo.model.UsuarioLogin;
 import org.ecommerce.demo.repository.UsuarioRepository;
 import org.ecommerce.demo.service.UsuarioServicos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,6 +29,8 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository repository;
+	
+	@Autowired
 	private UsuarioServicos servicos;
 	
 	@GetMapping
@@ -44,6 +47,7 @@ public class UsuarioController {
 	public ResponseEntity<List<Usuario>> FindByDescricaoProd (@PathVariable String nome){
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
+	
 	
 	@PostMapping("/novousuario")
 	public ResponseEntity<Object> novoUsuario (@Valid @RequestBody Usuario novoUsuario){
