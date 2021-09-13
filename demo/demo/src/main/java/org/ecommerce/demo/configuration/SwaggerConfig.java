@@ -23,13 +23,47 @@ public class SwaggerConfig {
 	return new Docket(DocumentationType.SWAGGER_2)
 	.select()
 	.apis(RequestHandlerSelectors
-	.basePackage("br.org.generation.blogpessoal.controller"))
+	.basePackage("org.ecommerce.demo.controller"))
 	.paths(PathSelectors.any())
 	.build()
 	.apiInfo(metadata())
 	.useDefaultResponseMessages(false)
 	.globalResponses(HttpMethod.GET, responseMessageForGET());
 	}
-
-
+	
+	public static ApiInfo metadata() {
+		return new ApiInfoBuilder()
+		.title("API - Projeto Integrador")
+		.description("Projeto API Spring - Ecommerce")
+		.version("1.0.0")
+		.license("Apache License Version 2.0")
+		.licenseUrl("http://localhost:8080/swagger-ui/")
+		.contact(contact())
+		.build();
+		}
+		private static Contact contact() {
+		return new Contact("Grupo 1",
+		"https://github.com/beatrizcastroe/Projeto-Integrador-Generation.git",
+		"beatrizcastroe9@gmail.com");
+		}
+		
+		private static List<Response> responseMessageForGET() {
+			return new ArrayList<Response>() {
+			private static final long serialVersionUID = 1L;
+			{
+			add(new ResponseBuilder().code("200")
+			.description("Sucesso!").build());
+			add(new ResponseBuilder().code("201")
+			.description("Objeto Criado!").build());
+			add(new ResponseBuilder().code("401")
+			.description("Não Autorizado!").build());
+			add(new ResponseBuilder().code("403")
+			.description("Proibido!").build());
+			add(new ResponseBuilder().code("404")
+			.description("Não Encontrado!").build());
+			add(new ResponseBuilder().code("500")
+			.description("Erro!").build());
+			}
+		};
+	}			
 }
