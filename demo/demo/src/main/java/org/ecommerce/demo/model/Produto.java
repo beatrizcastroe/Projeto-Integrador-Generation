@@ -103,7 +103,7 @@ public class Produto {
 		return usuarioRelacionado;
 	}
 
-	public void setUsuarioaRelacionado(Usuario usuarioRelacionado) {
+	public void setUsuarioRelacionado(Usuario usuarioRelacionado) {
 		this.usuarioRelacionado = usuarioRelacionado;
 	}	
 	
