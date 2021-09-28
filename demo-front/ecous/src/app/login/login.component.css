@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    font-family: "vremenagrotesk",sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+.cor {
+    color: #bcac76;
+}

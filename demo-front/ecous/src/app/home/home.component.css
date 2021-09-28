@@ -1,0 +1,42 @@
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+
+    background-color: grey;
+}
+.title-news{
+    text-align: center;
+}
+
+.card-left,
+.card-right{
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+.card-left:hover{
+    opacity: .8;
+}
+
+h2:hover{
+    color: black;
+}
+
+img:hover{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.card{
+    border: none;
+}
+
+.card-right:hover{
+    opacity: .8;
+}
+
+.card-body p{
+    font-weight: 600;
+    text-align:left;
+}

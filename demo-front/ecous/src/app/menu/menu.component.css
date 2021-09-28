@@ -1,0 +1,63 @@
+.header-absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+}
+.top-bar {
+    position: relative;
+    color: #343a40;
+    background: #e9ecef;
+    font-weight: 300;
+    z-index: 50;
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+.text-sm {
+    font-size: .875rem;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+.form-control {
+    padding-left: 0;
+    transition: all .5s;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background-color: transparent;
+    color:#bcac76
+    
+}
+
+input::placeholder {
+    color: #bcac76;
+    opacity: 2;
+  }
+.navbar-icon-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background: #bcac76;
+    font-size: 0.6rem;
+    line-height: 20px;
+}
+i:hover{
+    color: #bcac76; 
+}
+
+.brand-hover:hover{
+    color: #bcac76;   
+}
