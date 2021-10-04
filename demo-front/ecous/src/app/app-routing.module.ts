@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 
+
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch:'full'},
   
