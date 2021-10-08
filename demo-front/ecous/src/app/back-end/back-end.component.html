@@ -51,6 +51,8 @@
               <small class="text-muted"> Categoria: {{item.categoriaRelacionada.nomeCategoria}}</small>
               <p class="card-text mt-3">{{item.marca}}</p>
               <p class="card-text"><small class="text-muted">by: {{item.usuarioRelacionado.nome}}</small></p>
+              <a class="text-info mr-3" [routerLink]="['/produto-edit',item.idProduto]"  >Editar</a>
+                        <a class="text-danger"  [routerLink]="['/produto-delete',item.idProduto]" href="">Apagar</a>
             </div>
           </div>
         </div>

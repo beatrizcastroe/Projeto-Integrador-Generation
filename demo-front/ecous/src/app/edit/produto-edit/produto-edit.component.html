@@ -1,1 +1,53 @@
-<p>produto-edit works!</p>
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 text-center text-sencondary>Atualizar Produto</h1>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md 6">
+            <div class="form-group">
+                <label for="nome">Nome </label>
+                <input [(ngModel)]="produto.nome" type="text" class="form-control" id="nome"
+                    placeholder="Digite o nome do produto">
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Descricao</label>
+                <textarea [(ngModel)]="produto.descricao" class="form-control" name="descricao" id="descricao"
+                    rows="3"></textarea>
+            </div>
+
+           <div class="form-group">
+                <label for="marca">Marca</label>
+                <input [(ngModel)]="produto.marca" type="text" class="form-control" id="marca"
+                    placeholder="Digite a marca do produto">
+            </div>
+
+            <div class="form-group">
+                <label for="preco">Preço</label>
+                <input [(ngModel)]="produto.preco" type="number" class="form-control" id="preco"
+                    placeholder="Digite o preco do produto">
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input [(ngModel)]="produto.foto" type="text" class="form-control" id="foto"
+                    placeholder="Digite o link da foto do produto">
+            </div>
+
+            <div class="form-group">
+                <label for="tema">Escolha uma categoria: </label>
+                <select class="form-control" name="categoria" id="categoria" [(ngModel)]="idCategoria" (change)='findByIdCategoria()'>
+                    <option *ngFor="let item of listaCategorias" value="{{item.idCategoria}}">{{item.nomeCategoria}}</option>
+                </select>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-danger mr-4" routerLink='/backend' >Cancelar</button>
+                <button class="btn btn-success" (click)='atualizar()' >Atualizar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { BackEndComponent } from './back-end/back-end.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -23,7 +25,10 @@ const routes: Routes = [
   {path: 'backend', component:BackEndComponent},
   {path:'categoria', component: CategoriaComponent},
   {path: 'categoria-edit/:id', component:CategoriaEditComponent},
-  {path: 'categoria-delete/:id', component:CategoriaDeleteComponent}
+  {path: 'categoria-delete/:id', component:CategoriaDeleteComponent},
+  {path: 'produto-edit/:id',component:ProdutoEditComponent},
+  {path: 'produto-delete/:id',component:ProdutoDeleteComponent},
+
 ];
 
 @NgModule({
