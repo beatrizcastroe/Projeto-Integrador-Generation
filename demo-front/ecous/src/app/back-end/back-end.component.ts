@@ -75,7 +75,7 @@ export class BackEndComponent implements OnInit {
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert('Postagem criada com sucesso!')
+      alert('Produto cadastrado com sucesso!')
       this.produto = new Produto
       this.getAllProdutos()
     })

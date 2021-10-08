@@ -102,11 +102,23 @@
             <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome">
           </div>
           <div class="form-group">
-            <label for="marca">Marca</label>
-            <textarea [(ngModel)]='produto.marca' class="form-control" name="marca" id="marca" rows="3"></textarea>
+            <label for="foto">Foto</label>
+            <textarea [(ngModel)]='produto.foto' class="form-control" name="foto" id="foto" rows="1"></textarea>
           </div>
           <div class="form-group">
-            <label for="texto">Escolha uma categoria ou <a data-dismiss="modal" routerLink='/tema'>cadastre uma nova</a>: </label>
+            <label for="preco">Preço</label>
+            <textarea [(ngModel)]='produto.preco' class="form-control" name="preco" id="preco" rows="1"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="marca">Marca</label>
+            <textarea [(ngModel)]='produto.marca' class="form-control" name="marca" id="marca" rows="1"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="descricao" rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="texto">Escolha uma categoria ou <a data-dismiss="modal" routerLink='/categoria'>cadastre uma nova</a>: </label>
             <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change) = 'findByIdCategoria()'>
               <option *ngFor='let item of listaCategorias' value="{{item.idCategoria}}">
                 {{item.nomeCategoria}}
