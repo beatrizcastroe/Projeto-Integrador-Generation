@@ -5,6 +5,7 @@ export class Produto {
 
     public idProduto: number
     public nome: string
+    public foto: string
     public marca: string
     public preco: number
     public descricao: string
