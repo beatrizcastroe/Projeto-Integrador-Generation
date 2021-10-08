@@ -1,0 +1,125 @@
+<div class="container-fluid">
+
+    <div class="row bg-secondary d-flex align-items-center">
+      <div class="col-md-6">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6 text-white">
+            <h1 class="fs-54">Bem-vinde a ecous</h1>
+            <h5 class="fs-18">Sistema de gerenciamento de mercadorias.</h5>
+          </div>
+        </div>
+  
+        <div class="row d-flex justify-content-center mt-3 mb-5">
+          <div class="col-md-6">
+            <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novoProduto">Novo Produto</button>
+            <a class="btn btn-outline-light" href="#produtos">Ver Produtos</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6 d-flex justify-content-center mt-3 mb-5">
+        <img src="https://i.imgur.com/gQ7q90E.png" alt="" width="500px" height="500px">
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="container mb-5 mt-5" id="produtos">
+    <nav>
+      <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+  
+        <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todosProdutos-tab" data-toggle="tab"
+          href="#todosProdutos" role="tab" aria-controls="nav-todosProdutos" aria-selected="true">
+          Todos os Produtos</a>
+  
+        <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold" id="nav-meusProdutos-tab" data-toggle="tab"
+          href="#meusProdutos" role="tab" aria-controls="nav-meusProdutos" aria-selected="false">
+          Meus Produtos</a>
+  
+        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-produtoCategoria-tab" data-toggle="tab"
+          href="#produtoCategoria" role="tab" aria-controls="nav-produtoCategoria" aria-selected="false">
+          Produto por Categoria</a>
+      </div>
+    </nav>
+    <div class="tab-content mt-5" id="nav-tabContent">
+  
+      <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="nav-todosProdutos-tab">
+        <div class="card-columns">
+          <div class="card text-center" *ngFor='let item of listaProdutos'>
+            <div class="card-body">
+              <h5 class="card-title m-0">{{item.nome}}</h5>
+              <small class="text-muted"> Categoria: {{item.categoriaRelacionada.nomeCategoria}}</small>
+              <p class="card-text mt-3">{{item.marca}}</p>
+              <p class="card-text"><small class="text-muted">by: {{item.usuarioRelacionado.nome}}</small></p>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+  
+      <div class="tab-pane fade" id="meusProdutos" role="tabpanel" aria-labelledby="nav-meusProdutos-tab">
+        <div class="card-columns">
+          <div class="card text-center" *ngFor='let item of user.produto'>
+            <div class="card-body">
+              <h5 class="card-title m-0">{{item.nome}}</h5>
+              <small class="text-muted"> Categoria: {{item.categoriaRelacionada.nomeCategoria}}</small>
+              <p class="card-text mt-3">{{item.marca}}</p>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="tab-pane fade" id="produtoCategoria" role="tabpanel" aria-labelledby="nav-produtoCategoria-tab">
+        <div class="card-columns" *ngFor='let categoria of listaCategorias'>
+          <div class="card text-center" *ngFor='let item of categoria.produto'>
+            <div class="card-body">
+              <h5 class="card-title m-0">{{item.nome}}</h5>          
+              <p class="card-text mt-3">{{item.marca}}</p>
+              <p class="card-text"><small class="text-muted">by: {{item.usuarioRelacionado.nome}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="novoProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Novo Produto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome">
+          </div>
+          <div class="form-group">
+            <label for="marca">Marca</label>
+            <textarea [(ngModel)]='produto.marca' class="form-control" name="marca" id="marca" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="texto">Escolha uma categoria ou <a data-dismiss="modal" routerLink='/tema'>cadastre uma nova</a>: </label>
+            <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change) = 'findByIdCategoria()'>
+              <option *ngFor='let item of listaCategorias' value="{{item.idCategoria}}">
+                {{item.nomeCategoria}}
+              </option>
+  
+            </select>
+          </div>
+  
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  

@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
+import { BackEndComponent } from './back-end/back-end.component';
 
 
 
@@ -20,7 +21,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     HomeComponent,
     MenuComponent,
-    RegisterComponent
+    RegisterComponent,
+    BackEndComponent
   ],
   imports: [
     BrowserModule,

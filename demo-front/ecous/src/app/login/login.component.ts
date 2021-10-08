@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       environment.idUsuario = this.userLogin.idUsuario
 
 
-      this.router.navigate(['/home'])
+      this.router.navigate(['/backend'])
     }, erro =>{
       if(erro.status == 400){
         alert('Usuário e/ou senha incorretos.')
