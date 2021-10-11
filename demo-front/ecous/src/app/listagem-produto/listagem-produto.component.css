@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    font-family: "vremenagrotesk",sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.sidebar-heading {
+    margin-bottom: 1.2rem;
+    color: #212529;
+}
+
+@media (max-width: 983px){
+    .responsivotoggle{
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+.sidebar-icon-menu-link {
+    text-decoration: none;
+    color: #212529;
+    font-size: .875rem;
+}
+
+.brand-hover:hover{
+    color: #bcac76;   
+}
+.position-relative {
+    position: relative !important;
+}
+.product-stars {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    transition: all 0.3s;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    font-size: 1rem;
+}
+
+.text-gray-500 {
+    color: #adb5bd;
+    font-size: .875rem;
+}

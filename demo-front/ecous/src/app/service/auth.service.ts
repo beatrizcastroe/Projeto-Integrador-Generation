@@ -19,18 +19,18 @@ export class AuthService {
   ) { }
 
   entrar (userLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.put<UsuarioLogin>('https://projetointegradorg1.herokuapp.com/usuarios/login', userLogin)
+    return this.http.put<UsuarioLogin>('https://ecousteste.herokuapp.com/usuarios/login', userLogin)
 
   }
 
   cadastrar(user: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('https://projetointegradorg1.herokuapp.com/usuarios/novousuario', user)
+    return this.http.post<Usuario>('https://ecousteste.herokuapp.com/usuarios/novousuario', user)
 
   }
 
-  logado(){
+  fomenu(){
     let ok = false
-    if(environment.token == '' && this.router.url.includes('/home')){
+    if(this.router.url.includes('/home') || this.router.url.includes('/contato') || this.router.url.includes('/quemsomos') || this.router.url.includes('/produtos') || this.router.url.includes('/produto') ){
       ok = true
     }
     return ok
