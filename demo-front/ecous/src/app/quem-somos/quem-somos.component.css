@@ -1,0 +1,87 @@
+
+.d-none {
+    display: none !important;
+}
+
+
+.d-xl-block {
+    display: block !important;
+}
+
+.letter-spacing-5 {
+    letter-spacing: .5em;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.text-primary {
+    color: #bcac76 !important;
+}
+
+.mb-3, .my-3 {
+    margin-bottom: 1rem !important;
+}
+
+.text-muted {
+    color: #868e96 !important;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.h6 {
+    font-size: 1rem;
+}
+
+
+.display-3 {
+    font-size: 2.7rem;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.h1 {
+    font-size: 2.5rem;
+}
+
+.my-5 {
+    margin-bottom: 3rem !important;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.avatar {
+    display: inline-block;
+    position: relative;
+    width: 10rem;
+    height: auto;
+    max-width: 100%;
+    text-align: center;
+    border: #dee2e6;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 1rem rgb(0 0 0 / 15%);
+    line-height: 3rem;
+}
+
+body {
+    margin: 0;
+    font-family: "vremenagrotesk",sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+

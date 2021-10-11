@@ -20,24 +20,24 @@ export class ProdutoService {
   }
 
   getAllProdutos(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('https://projetointegradorg1.herokuapp.com/produtos', this.token)
+    return this.http.get<Produto[]>('https://ecousteste.herokuapp.com/produtos')
   }
 
   postProduto(produto: Produto): Observable<Produto>{
-    return this.http.post<Produto>('https://projetointegradorg1.herokuapp.com/produtos/novoproduto', produto, this.token)
+    return this.http.post<Produto>('https://ecousteste.herokuapp.com/produtos/novoproduto', produto)
   }
 
   getByIdProduto(idProduto: number): Observable<Produto>{
-    return this.http.get<Produto>(`https://projetointegradorg1.herokuapp.com/produtos/idproduto/${idProduto}`, this.token)
+    return this.http.get<Produto>(`https://ecousteste.herokuapp.com/produtos/idproduto/${idProduto}`)
   }
   putProduto(produto: Produto): Observable<Produto>{
-    return this.http.put<Produto>('https://projetointegradorg1.herokuapp.com/produtos/atualizarproduto', produto, this.token)
+    return this.http.put<Produto>('https://ecousteste.herokuapp.com/produtos/atualizarproduto', produto)
   }
   deleteProduto(idProduto: number){
-    return this.http.delete(`https://projetointegradorg1.herokuapp.com/produtos/deletarproduto/${idProduto}`, this.token)
+    return this.http.delete(`https://ecousteste.herokuapp.com/produtos/deletarproduto/${idProduto}`)
   }
 
   getByIdUser(idUsuario: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`https://projetointegradorg1.herokuapp.com/usuarios/idusuario/${idUsuario}`, this.token)
+    return this.http.get<Usuario>(`https://ecousteste.herokuapp.com/usuarios/idusuario/${idUsuario}`)
   }
 }

@@ -19,23 +19,23 @@ export class CategoriaService {
   }
 
   getAllCategoria(): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('https://projetointegradorg1.herokuapp.com/categorias', this.token)
+    return this.http.get<Categoria[]>('https://ecousteste.herokuapp.com/categorias')
   }
 
   getByIdCategoria(id: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`https://projetointegradorg1.herokuapp.com/categorias/id/${id}`, this.token)
+    return this.http.get<Categoria>(`https://ecousteste.herokuapp.com/categorias/id/${id}`)
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.post<Categoria>('https://projetointegradorg1.herokuapp.com/categorias/novacategoria', categoria, this.token)
+    return this.http.post<Categoria>('https://ecousteste.herokuapp.com/categorias/novacategoria', categoria)
 
   }
 
   putCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.put<Categoria>('https://projetointegradorg1.herokuapp.com/categorias/atualizarcategoria', categoria, this.token)
+    return this.http.put<Categoria>('https://ecousteste.herokuapp.com/categorias/atualizarcategoria', categoria)
   }
 
   deleteCategoria(id: number) {
-    return this.http.delete(`https://projetointegradorg1.herokuapp.com/categorias/deletar/${id}`, this.token)
+    return this.http.delete(`https://ecousteste.herokuapp.com/categorias/deletar/${id}`)
   }
 }
