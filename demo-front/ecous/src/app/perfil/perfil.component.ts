@@ -26,7 +26,7 @@ export class PerfilComponent implements OnInit {
       cep: dados.cep,
       logradouro: dados.logradouro,
       bairro: dados.bairro,
-      localidade: dados.localidade,
+      cidade: dados.localidade,
       uf: dados.uf
     })
   }

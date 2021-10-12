@@ -32,9 +32,10 @@ export class AuthService {
     return this.http.get<Usuario[]>('https://ecousteste.herokuapp.com/usuarios')
   }
 
+
   fomenu(){
     let ok = false
-    if(this.router.url.includes('/home') || this.router.url.includes('/contato') || this.router.url.includes('/quemsomos') || this.router.url.includes('/produtos') || this.router.url.includes('/produto/') ){
+    if(this.router.url.includes('/home') || this.router.url.includes('/contato') || this.router.url.includes('/quemsomos') || this.router.url.includes('/produtos') || this.router.url.includes('/produto/')|| this.router.url.includes('/perfil') ){
       ok = true
     }
     return ok

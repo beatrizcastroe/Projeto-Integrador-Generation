@@ -1,26 +1,176 @@
-<form #f="ngForm">
-    <div class="Form-group" >
-   
-      <br><br>
-      <label for="cep">CEP:</label><br>
-      <input type="text" class="Form-control" id="cep" name="cep" ngModel  #cep="ngModel" (blur)="consultaCep(cep.value , f)">
-   
-      <br><br>
-      <label for="logradouro">LOGRADOURO</label><br>
-      <input type="text" class="Form-control" id="logradouro" name="logradouro" ngModel #logradouro="ngModel" placeholder="..." disabled>
-   
-      <br><br>
-      <label for="bairro">BAIRRO</label><br>
-      <input type="text" class="Form-control" id="bairro" name="bairro" ngModel #bairro="ngModel" placeholder="..." disabled>
-   
-      <br><br>
-      <label for="localidade">CIDADE</label><br>
-      <input type="text" class="Form-control" id="localidade" name="localidade" ngModel #cidade="ngModel" placeholder="..." disabled>
-   
-      <br><br>
-      <label for="uf">UF</label><br>
-      <input type="text" class="Form-control" id="uf" name="uf" ngModel #uf="ngModel" placeholder="..." disabled>
-   
+<!-- Hero Content-->
+<div class="container mt-3">
+  <!-- Breadcrumbs -->
+  <ol class="breadcrumb pl-0 ">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item active">Seu perfil </li>
+  </ol>
+  <!-- Hero Content-->
+  <div class="hero-content">
+    <h1 class="hero-heading mt-4">Seu perfil</h1>
+    <div>
+      <p class="lead text-muted mt-1">Mantenha sempre seu perfil atualizado, inclusive seu endereço para que a entrega ocorra corretamente</p>
     </div>
-   
-    </form>
+  </div>
+</div>
+
+<section class="pb-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-xl-9 mb-5 mb-lg-0">
+        <div class="mb-5">
+          <h3 class="mb-5 mt-5">Mude sua senha</h3>
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-label" for="password_old">Senha antiga</label>
+                  <input class="form-control" id="password_old" type="password">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-label" for="password_1">Nova senha</label>
+                  <input class="form-control" id="password_1" type="password">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="form-label" for="password_2">Digite novamente</label>
+                  <input class="form-control" id="password_2" type="password">
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <button class="btn btn-dark" type="submit"><i class="fa fa-save mr-2"></i>Change password</button>
+            </div>
+          </form>
+        </div>
+        <hr class="mb-5">
+        <h3 class="mb-5">Detalhes de endereço</h3>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="form-label" for="nome">Nome</label>
+              <input class="form-control tamc" id="nome" type="text">
+            </div>
+          </div>
+          <!--<div class="col-sm-6">
+              <div class="form-group">
+                <label class="form-label" for="lastname">Lastname</label>
+                <input class="form-control" id="lastname" type="text">
+              </div>
+            </div>-->
+        </div>
+        <!-- /.row-->
+        <form #f="ngForm">
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+
+                <label class="form-label" for="cep">CEP</label>
+                <input class="form-control tamcep" id="cep" name="cep" ngModel #cep="ngModel"
+                  (blur)="consultaCep(cep.value , f)">
+              </div>
+            </div>
+            <div class="col-sm-3 col-md-6">
+              <div class="form-group">
+                <label class="form-label" for="logradouro">Rua</label>
+                <input class="form-control" id="logradouro" name="logradouro" ngModel #logradouro="ngModel"
+                  placeholder="..." disabled>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="form-group">
+                <label class="form-label" for="comp">Complemento</label>
+                <input class="form-control" id="comp" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="form-label" for="bairro">Bairro</label>
+                <input class="form-control" id="bairro" name="bairro" ngModel #bairro="ngModel" placeholder="..."
+                  disabled>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="form-label" for="cidade">Cidade</label>
+                <input class="form-control" id="cidade" name="cidade" ngModel #cidade="ngModel" placeholder="..."
+                  disabled>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="form-group">
+                <label class="form-label" for="uf">Estado</label>
+                <input class="form-control" id="uf" name="uf" ngModel #uf="ngModel" placeholder="..." disabled>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="form-group">
+                <label class="form-label" for="uf">Número</label>
+                <input class="form-control" id="nome" type="text">
+              </div>
+            </div>
+
+          </div>
+
+        </form>
+
+        <!-- /.row-->
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="form-label" for="emailAccount">Email</label>
+              <input class="form-control tamc" id="emailAccount" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- /.row-->
+        <div class="mb-5 mt-3">
+          <button class="btn btn-dark" type="submit"><i class="fa fa-save mr-2 "></i>Save changes</button>
+        </div>
+      </div>
+      <!-- Customer Sidebar-->
+      <div class="col-xl-3 col-lg-4 mb-5">
+        <div class="customer-sidebar card border-0">
+          <div class="customer-profile"><a class="d-inline-block" href="#"><img
+                class="img-fluid rounded-circle customer-image"
+                src="" alt=""></a>
+            <h5>BIA</h5>
+            <p class="text-muted text-sm mb-0">Los Angeles, CA</p>
+          </div>
+          <nav class="list-group customer-nav"><a
+              class="list-group-item d-flex justify-content-between align-items-center"
+              href="customer-orders.html"><span>
+
+                <svg class="svg-icon svg-icon-heavy mr-2">
+                  <use xlink:href="#male-user-1"> </use>
+                </svg>Profile</span></a><a class="list-group-item d-flex justify-content-between align-items-center"
+              href="customer-addresses.html"><span>
+                <svg class="svg-icon svg-icon-heavy mr-2">
+                  <use xlink:href="#real-estate-1"> </use>
+                  <use xlink:href="#heart-1"> </use>
+                </svg>Wishlist</span></a><a class="list-group-item d-flex justify-content-between align-items-center"
+              href="customer-login.html"><span>
+                <svg class="svg-icon svg-icon-heavy mr-2">
+                  <use xlink:href="#exit-1"> </use>
+                </svg>Log out</span></a>
+          </nav>
+        </div>
+      </div>
+      <!-- /Customer Sidebar-->
+    </div>
+  </div>
+</section>
