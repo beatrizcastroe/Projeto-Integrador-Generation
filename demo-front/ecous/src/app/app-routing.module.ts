@@ -15,6 +15,8 @@ import { MenuComponent } from './menu/menu.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { RegisterComponent } from './register/register.component';
 import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
+import { LoginBackendComponent } from './login-backend/login-backend.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 const routes: Routes = [
@@ -35,7 +37,9 @@ const routes: Routes = [
   {path: 'quemsomos', component: QuemSomosComponent},
   {path: 'contato',component:ContatoComponent},
   {path: 'produtos', component: ListagemProdutoComponent},
-  {path: 'produto/:id', component: DetalheProdutoComponent}
+  {path: 'produto/:id', component: DetalheProdutoComponent},
+  {path: 'login-backend', component: LoginBackendComponent},
+  {path: 'perfil', component: PerfilComponent}
 
 ];
 

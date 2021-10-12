@@ -1,0 +1,40 @@
+<section class="container-fluid">
+
+    <div class="row d-flex align-items-center">
+
+      <div class="col-md-5">
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6 text-center responsivo">
+
+            <h2 class="text-center login">Olá! Seja bem-vindo!</h2>
+            <span>Faça seu login abaixo.</span>
+
+            <div class="form-group">
+              <label for="usuario"></label>
+              <input [(ngModel)]='userLogin.email'  class="form-control" type="text" name="usuario" id="usuario" placeholder="Usuário">
+            </div>
+
+            <div class="form-group">
+              <label for="senha"></label>
+              <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Senha">
+            </div>
+
+            <div>
+                <div class="link">
+                    <div class="senha">
+                        <a routerLink="/register" class="cadastrar">Esqueceu a senha?</a>
+                    </div>
+                    <div class="button">
+                        <button type="submit" class="btn" (click)='entrar()'>Entrar</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 img">
+          <img src="https://i.imgur.com/kHGDwoc.jpg" alt="logo da ecous">
+      </div>
+
+    </div>

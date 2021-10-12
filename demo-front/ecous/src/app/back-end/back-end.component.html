@@ -1,139 +1,81 @@
-<div class="container-fluid">
+<div class="container-fluid p-0">
+  <div class="row">
+    <div class="col-md-3">
+     <div class="d-flex flex-column text-white sidebar" style="width: 300px; height: 100vh;">
+       <a href="/" class="d-flex align-items-center text-white text-decoration-none">
+         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+         <span class="fs-4">ECOUS</span>
+       </a>
+       <hr>
+       <ul class="nav nav-pills flex-column mb-auto">
+         <li class="nav-item">
+           <a routerLink='/home' class="nav-link text-white" aria-current="page">
+             <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>Início
+           </a>
+         </li>
+         <li>
+           <a href="#" class="nav-link text-white">
+             <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+             Cadastrar produtos
+           </a>
+         </li>
 
-    <div class="row bg-secondary d-flex align-items-center">
-      <div class="col-md-6">
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-6 text-white">
-            <h1 class="fs-54">Bem-vinde a ecous</h1>
-            <h5 class="fs-18">Sistema de gerenciamento de mercadorias.</h5>
-          </div>
-        </div>
-  
-        <div class="row d-flex justify-content-center mt-3 mb-5">
-          <div class="col-md-6">
-            <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novoProduto">Novo Produto</button>
-            <a class="btn btn-outline-light" href="#produtos">Ver Produtos</a>
-          </div>
-        </div>
-      </div>
-  
-      <div class="col-md-6 d-flex justify-content-center mt-3 mb-5">
-        <img src="https://i.imgur.com/gQ7q90E.png" alt="" width="500px" height="500px">
-      </div>
+
+         <li>
+           <a routerLink='/categoria' class="nav-link text-white">
+             <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+             Cadastrar Categoria
+           </a>
+         </li>
+
+         <li>
+           <a routerLink='/categoria' class="nav-link text-white">
+             <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+             Cadastrar Subcategoria
+           </a>
+         </li>
+         <li>
+           <a routerLink='/login'  class="nav-link text-white">
+             <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+             Sair
+           </a>
+         </li>
+       </ul>
+       <hr>
+     </div>
   
     </div>
-  </div>
-  
-  <div class="container mb-5 mt-5" id="produtos">
-    <nav>
-      <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-  
-        <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todosProdutos-tab" data-toggle="tab"
-          href="#todosProdutos" role="tab" aria-controls="nav-todosProdutos" aria-selected="true">
-          Todos os Produtos</a>
-  
-        <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold" id="nav-meusProdutos-tab" data-toggle="tab"
-          href="#meusProdutos" role="tab" aria-controls="nav-meusProdutos" aria-selected="false">
-          Meus Produtos</a>
-  
-        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-produtoCategoria-tab" data-toggle="tab"
-          href="#produtoCategoria" role="tab" aria-controls="nav-produtoCategoria" aria-selected="false">
-          Produto por Categoria</a>
-      </div>
-    </nav>
-    <div class="tab-content mt-5" id="nav-tabContent">
-  
-      <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="nav-todosProdutos-tab">
-        <div class="card-columns">
-          <div class="card text-center" *ngFor='let item of listaProdutos'>
-            <div class="card-body">
-              <h5 class="card-title m-0">{{item.nome}}</h5>
-              <small class="text-muted"> Categoria: {{item.categoriaRelacionada.nomeCategoria}}</small>
-              <p class="card-text mt-3">{{item.marca}}</p>
-              <p class="card-text"><small class="text-muted">by: {{item.usuarioRelacionado.nome}}</small></p>
-              <a class="text-info mr-3" [routerLink]="['/produto-edit',item.idProduto]"  >Editar</a>
-                        <a class="text-danger"  [routerLink]="['/produto-delete',item.idProduto]" href="">Apagar</a>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-  
-      <div class="tab-pane fade" id="meusProdutos" role="tabpanel" aria-labelledby="nav-meusProdutos-tab">
-        <div class="card-columns">
-          <div class="card text-center" *ngFor='let item of user.produto'>
-            <div class="card-body">
-              <h5 class="card-title m-0">{{item.nome}}</h5>
-              <small class="text-muted"> Categoria: {{item.categoriaRelacionada.nomeCategoria}}</small>
-              <p class="card-text mt-3">{{item.marca}}</p>
-  
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="tab-pane fade" id="produtoCategoria" role="tabpanel" aria-labelledby="nav-produtoCategoria-tab">
-        <div class="card-columns" *ngFor='let categoria of listaCategorias'>
-          <div class="card text-center" *ngFor='let item of categoria.produto'>
-            <div class="card-body">
-              <h5 class="card-title m-0">{{item.nome}}</h5>          
-              <p class="card-text mt-3">{{item.marca}}</p>
-              <p class="card-text"><small class="text-muted">by: {{item.usuarioRelacionado.nome}}</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+    <div class="col-md-9 p-0">
+     <table class="table">
+       <thead class="thead text-white">
+         <tr>
+           <th scope="col">ID</th>
+           <th scope="col">Produto</th>
+           <th scope="col">Categoria</th>
+           <th scope="col">Marca</th>
+           <th scope="col">Valor</th>
+           <th scope="col">Funções</th>
+         </tr>
+       </thead>
+       <tbody>
+         
+         <tr *ngFor='let item of listaProdutos'>
+           <td>{{item.idProduto}}</td>
+           <td>{{item.nome}}</td>
+           <td>{{item.categoriaRelacionada.nomeSubcategoria}}</td>
+           <td>{{item.marca}}</td>
+           <td>R$ {{item.preco}}</td>
+           <td class="d flex justify-content-end">
+             <button class="btn btn-info mr-3" [routerLink]="['/produto-edit', item.idProduto]"
+             >Editar</button>
+             <button class="btn btn-danger" [routerLink]="['/produto-delete', item.idProduto]"
+             >Apagar</button>
+         </td>
+
+         </tbody>
+     </table>
+     
     </div>
-  </div>
-  
-  
-  <!-- Modal -->
-  <div class="modal fade" id="novoProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="TituloModalCentralizado">Novo Produto</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome">
-          </div>
-          <div class="form-group">
-            <label for="foto">Foto</label>
-            <textarea [(ngModel)]='produto.foto' class="form-control" name="foto" id="foto" rows="1"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="preco">Preço</label>
-            <textarea [(ngModel)]='produto.preco' class="form-control" name="preco" id="preco" rows="1"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="marca">Marca</label>
-            <textarea [(ngModel)]='produto.marca' class="form-control" name="marca" id="marca" rows="1"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="descricao">Descrição</label>
-            <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="descricao" rows="2"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="texto">Escolha uma categoria ou <a data-dismiss="modal" routerLink='/categoria'>cadastre uma nova</a>: </label>
-            <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change) = 'findByIdCategoria()'>
-              <option *ngFor='let item of listaCategorias' value="{{item.idCategoria}}">
-                {{item.nomeCategoria}}
-              </option>
-  
-            </select>
-          </div>
-  
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  
+   </div>
+</div>

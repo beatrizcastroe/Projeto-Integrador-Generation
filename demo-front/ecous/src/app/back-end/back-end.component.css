@@ -1,0 +1,16 @@
+.sidebar{
+    background-color: rgba(201, 181, 3, 0.856);
+}
+
+li a:hover{
+    background-color: rgba(201, 181, 3, 0.556);
+}
+
+.thead{
+    background-color: rgba(201, 181, 3, 0.856);
+}
+
+tbody tr:hover{
+    cursor: pointer;
+    background-color: rgba(201, 181, 3, 0.582);
+}

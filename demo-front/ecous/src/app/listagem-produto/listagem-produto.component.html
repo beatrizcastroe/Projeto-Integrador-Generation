@@ -20,15 +20,12 @@
                 <a class="font-weight-bold brand-hover sidebar-icon-menu-link active" id="v-pills-home-tab"
                     data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
                     aria-selected="true">Todos os Produtos</a>
-                <a class="font-weight-bold brand-hover sidebar-icon-menu-link" id="v-pills-profile-tab"
-                    data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                    aria-selected="false"><i class="fa fa-shopping-cart  mr-2" aria-hidden="true"></i>Perfil</a>
-                <a class="font-weight-bold brand-hover sidebar-icon-menu-link " id="v-pills-messages-tab"
-                    data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                    aria-selected="false">Mensagens</a>
-                <a class="font-weight-bold brand-hover sidebar-icon-menu-link " id="v-pills-settings-tab"
-                    data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                    aria-selected="false">Configurações</a>
+                <div *ngFor='let categoria of listaCategorias'>
+                    <a (click)='listagemCategoria(categoria.idCategoria)'
+                        class="font-weight-bold brand-hover sidebar-icon-menu-link" id="v-pills-profile-tab"
+                        data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                        aria-selected="false">{{categoria.nomeSubcategoria}}</a>
+                </div>
             </div>
         </div>
         <div class="col-md-9">
@@ -37,11 +34,11 @@
                     aria-labelledby="v-pills-home-tab">
                     <div class="card-columns">
                         <div class="card border border-white" *ngFor='let item of listaProdutos'>
-                            <img [routerLink]="['/produto', item.idProduto]" class="card-img"
-                                src="{{item.foto}}"
+                            <img [routerLink]="['/produto', item.idProduto]" class="card-img" src="{{item.foto}}"
                                 alt="Imagem do card">
                             <div class="position-relative ">
-                                <h3 class="text-base mb-1 card-title"><a class="text-dark" >{{item.nome}}</a></h3><span class="text-gray-500 text-sm">R$ {{item.preco}}</span>
+                                <h3 class="text-base mb-1 card-title"><a class="text-dark">{{item.nome}}</a></h3><span
+                                    class="text-gray-500 text-sm">R$ {{item.preco}}</span>
                                 <div class="product-stars text-xs"><a class="text-dark  brand-hover" href="#"
                                         data-toggle="modal" data-target="#sidebarCart"> add carrinho
                                         <i class="fa fa-shopping-cart  mr-2" aria-hidden="true"></i>
@@ -55,7 +52,25 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    ...</div>
+                    <div class="card-columns">
+                        <div class="card border border-white" *ngFor='let item of categoria.produto'>
+                            <img [routerLink]="['/produto', item.idProduto]" class="card-img" src="{{item.foto}}"
+                                alt="Imagem do card">
+                            <div class="position-relative ">
+                                <h3 class="text-base mb-1 card-title"><a class="text-dark">{{item.nome}}</a></h3><span
+                                    class="text-gray-500 text-sm">R$ {{item.preco}}</span>
+                                <div class="product-stars text-xs"><a class="text-dark  brand-hover" href="#"
+                                        data-toggle="modal" data-target="#sidebarCart"> add carrinho
+                                        <i class="fa fa-shopping-cart  mr-2" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="text-dark brand-hover position-relative" href="wishlist.html">
+                                        <i class="fa fa-heart-o ml-1" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                     ...</div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
