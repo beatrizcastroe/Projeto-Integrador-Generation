@@ -21,6 +21,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.component';
 import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
 import { LoginBackendComponent } from './login-backend/login-backend.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -42,7 +43,8 @@ import { LoginBackendComponent } from './login-backend/login-backend.component';
     ContatoComponent,
     ListagemProdutoComponent,
     DetalheProdutoComponent,
-    LoginBackendComponent
+    LoginBackendComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
