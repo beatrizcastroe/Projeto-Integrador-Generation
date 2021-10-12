@@ -1,16 +1,34 @@
 .sidebar{
-    background-color: rgba(201, 181, 3, 0.856);
+    background-color: #BCAD76;
+    height: 100%;
 }
 
-li a:hover{
-    background-color: rgba(201, 181, 3, 0.556);
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #BCAD76;
+}
+
+a:hover{
+    background-color: hsla(0, 0%, 90%, 0.712);;
 }
 
 .thead{
-    background-color: rgba(201, 181, 3, 0.856);
+    background-color: #BCAD76;
 }
 
 tbody tr:hover{
     cursor: pointer;
-    background-color: rgba(201, 181, 3, 0.582);
+    background-color: hsla(0, 0%, 90%, 0.712);
+}
+
+
+/* BUTTONS */
+
+.btnY{
+    background-color: #0a044e;
+    color: #fff;
+}
+
+.btn-delete{
+    background-color: #c81939;
+    color: #fff;
 }

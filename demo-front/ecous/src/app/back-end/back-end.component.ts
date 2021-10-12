@@ -22,8 +22,11 @@ export class BackEndComponent implements OnInit {
   listaCategorias: Categoria []
   idCategoria: number
 
+  listaUsuarios: Usuario []
   user: Usuario = new Usuario()
   idUsuario = environment.idUsuario
+  confirmarSenha: string
+
 
   constructor(
     private router: Router, 
@@ -35,11 +38,12 @@ export class BackEndComponent implements OnInit {
 
   ngOnInit() {
     if(environment.token == ''){
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login-backend'])
     }
 
     this.getAllCategorias()
     this.getAllProdutos()
+    this.getAllUsuarios()
   }
 
   getAllCategorias(){
@@ -66,6 +70,12 @@ export class BackEndComponent implements OnInit {
     })
   }
 
+  getAllUsuarios(){
+    this.authService.getAllUsuarios().subscribe((resp: Usuario[]) => {
+      this.listaUsuarios = resp
+    })
+  }
+
   publicar(){
     this.categoria.idCategoria = this.idCategoria
     this.produto.categoriaRelacionada = this.categoria
@@ -79,6 +89,36 @@ export class BackEndComponent implements OnInit {
       this.produto = new Produto
       this.getAllProdutos()
     })
+  }
+
+  cadastrarCat(){
+    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
+      this.categoria = resp
+      alert('Categoria cadastrado com sucesso!')
+      this.getAllCategorias()
+      this.categoria = new Categoria()
+    })
+  }
+
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value
+  }
+  cadastrar() {
+    console.log("user"+JSON.stringify(this.user))
+    console.log("confirmarSenha"+ this.confirmarSenha)
+ 
+    if (this.user.senha != this.confirmarSenha) {
+      alert('As senhas estão incorretas.')
+    }
+    else {
+      this.authService.cadastrar(this.user).subscribe((resp: Usuario) =>{
+        this.user = resp 
+        this.router.navigate(['/backend'])
+        alert('Usuário cadastrado com sucesso')
+        this.getAllUsuarios()
+      })
+
+    }
   }
 
 }
