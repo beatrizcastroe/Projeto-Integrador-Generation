@@ -1,0 +1,26 @@
+<form #f="ngForm">
+    <div class="Form-group" >
+   
+      <br><br>
+      <label for="cep">CEP:</label><br>
+      <input type="text" class="Form-control" id="cep" name="cep" ngModel  #cep="ngModel" (blur)="consultaCep(cep.value , f)">
+   
+      <br><br>
+      <label for="logradouro">LOGRADOURO</label><br>
+      <input type="text" class="Form-control" id="logradouro" name="logradouro" ngModel #logradouro="ngModel" placeholder="..." disabled>
+   
+      <br><br>
+      <label for="bairro">BAIRRO</label><br>
+      <input type="text" class="Form-control" id="bairro" name="bairro" ngModel #bairro="ngModel" placeholder="..." disabled>
+   
+      <br><br>
+      <label for="localidade">CIDADE</label><br>
+      <input type="text" class="Form-control" id="localidade" name="localidade" ngModel #cidade="ngModel" placeholder="..." disabled>
+   
+      <br><br>
+      <label for="uf">UF</label><br>
+      <input type="text" class="Form-control" id="uf" name="uf" ngModel #uf="ngModel" placeholder="..." disabled>
+   
+    </div>
+   
+    </form>

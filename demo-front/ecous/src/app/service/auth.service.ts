@@ -30,7 +30,7 @@ export class AuthService {
 
   fomenu(){
     let ok = false
-    if(this.router.url.includes('/home') || this.router.url.includes('/contato') || this.router.url.includes('/quemsomos') || this.router.url.includes('/produtos') || this.router.url.includes('/produto') ){
+    if(this.router.url.includes('/home') || this.router.url.includes('/contato') || this.router.url.includes('/quemsomos') || this.router.url.includes('/produtos') || this.router.url.includes('/produto/') ){
       ok = true
     }
     return ok

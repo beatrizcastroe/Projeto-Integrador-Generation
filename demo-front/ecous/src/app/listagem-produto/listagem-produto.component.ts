@@ -76,4 +76,9 @@ export class ListagemProdutoComponent implements OnInit {
       this.getAllProdutos()
     })
   }
+  listagemCategoria(id: number){
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
+      this.categoria = resp
+    })
+  }
 }

@@ -20,6 +20,8 @@ import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.component';
 import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
+import { LoginBackendComponent } from './login-backend/login-backend.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -40,7 +42,9 @@ import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.compo
     QuemSomosComponent,
     ContatoComponent,
     ListagemProdutoComponent,
-    DetalheProdutoComponent
+    DetalheProdutoComponent,
+    LoginBackendComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
