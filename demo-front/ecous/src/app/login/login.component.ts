@@ -12,6 +12,7 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
 
   userLogin: UsuarioLogin = new UsuarioLogin()
+  tokenUsuario: string;
 
   constructor(
     private auth: AuthService,
@@ -25,12 +26,24 @@ export class LoginComponent implements OnInit {
     this.auth.entrar(this.userLogin).subscribe((resp: UsuarioLogin) => {
       this.userLogin = resp
 
-      environment.token = this.userLogin.token
-      environment.nome = this.userLogin.nome
-      environment.idUsuario = this.userLogin.idUsuario
+      environment.token = this.userLogin.token;
+      environment.nome = this.userLogin.nome;
+      environment.idUsuario = this.userLogin.idUsuario;
+      environment.pedidos = this.userLogin.pedidos.id;
+      environment.listaDeDesejos = this.userLogin.listaDeDesejos.id;
 
+      console.log(environment.token);
+      console.log(environment.idUsuario);
+      console.log("Pedido ID: "+ environment.pedidos);
+      console.log("Lista de Desejos ID: "+ environment.listaDeDesejos);
+      
+      /* ARMAZENA O TOKEN DO USUARIO NA VARIAVEL */
+      this.tokenUsuario = this.userLogin.token;
 
-      this.router.navigate(['/backend'])
+      /* ARMAZENA O TOKEN DO USUARIO NO LOCAL STORAGE */
+      localStorage.setItem('token', this.tokenUsuario);
+
+      this.router.navigate(['/home'])
     }, erro =>{
       if(erro.status == 400){
         alert('Usuário e/ou senha incorretos.')

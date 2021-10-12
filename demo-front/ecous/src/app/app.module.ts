@@ -22,6 +22,8 @@ import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.co
 import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
 import { LoginBackendComponent } from './login-backend/login-backend.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 
 
@@ -44,7 +46,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     ListagemProdutoComponent,
     DetalheProdutoComponent,
     LoginBackendComponent,
-    PerfilComponent
+    PerfilComponent,
+    PedidoComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
