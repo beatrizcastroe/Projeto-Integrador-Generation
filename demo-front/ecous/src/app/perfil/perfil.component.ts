@@ -165,6 +165,7 @@ export class PerfilComponent implements OnInit {
     this.produtoService.adicionaItemCarrinho(idProduto, idCarrinho).subscribe(() => {
       /* DADOS CARRINHO USUARIO */
       this.findByIdProdutosCarrinho();
+      alert('Item adicionado ao carrinho');
 
     })
 

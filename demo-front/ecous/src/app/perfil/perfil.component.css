@@ -155,3 +155,22 @@ svg {
     overflow: hidden;
     vertical-align: middle;
 }
+
+.cart-item {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.cart-item-img {
+    max-width: 80px;
+}
+
+.cart-title {
+    margin-left: 1rem;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
