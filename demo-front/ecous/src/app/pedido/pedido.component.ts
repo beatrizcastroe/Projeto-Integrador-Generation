@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Pedido } from '../model/Pedido';
 import { Produto } from '../model/Produto';
-import { AlertasService } from '../service/alerta.service';
 import { PedidoService } from '../service/pedido.service';
 
 
@@ -28,11 +27,13 @@ export class PedidoComponent implements OnInit {
 
   idMemoria: number;
 
+  nomex: string
+
   constructor(
     private pedidoService: PedidoService,
     private router: Router,
     private route: ActivatedRoute,
-    private alertas: AlertasService
+
 
   ) { }
 
@@ -93,22 +94,29 @@ export class PedidoComponent implements OnInit {
           }
 
           // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
-          this.listaDeProdutos[i].qntPedidoProduto = contador;
+          this.listaDeProdutos[i].qtdPedidoProduto = contador;
 
         }
 
         // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
-        this.memoria = this.listaDeProdutos;
+       // this.memoria = this.listaDeProdutos;
 
+        /* AGRUPA OS ITENS REPETIDOS DENTRO DO ARRAY */
+        this.listaDeProdutos = this.listaDeProdutos.filter((item, index, self) =>
+          index === self.findIndex((t) => (
+            t.nome === item.nome && t.descricao === item.descricao
+          ))
+        )
+/*
         let ids = [];
-
+        console.log(this.memoria[0].nome)
         for(let i = 0; i < this.memoria.length; i++) {
-          ids.push(this.memoria[i].idProduto);
+         this.nomex.push(this.memoria[i].nome);
         }
 
         for(let i = 0; i < this.memoria.length; i++) {
           for(let j = 0; j < this.memoria.length; j++) {
-            if(ids.indexOf(this.memoria[j].idProduto) == -1) {
+            if(ids.indexOf(this.memoria[j].nome) == -1) {
               this.memoriaV.push(this.memoria[i]);
             }
           }
@@ -116,7 +124,7 @@ export class PedidoComponent implements OnInit {
 
         console.log(this.memoriaV);
 
-        this.listaDeProdutos = this.memoriaV;
+        this.listaDeProdutos = this.memoriaV;*/
 
         /*for(let q = 0; q < this.listaDeProdutos.length; q++) {
           for(let w = 0; w < this.listaDeProdutos.length; w++) {
@@ -146,7 +154,7 @@ export class PedidoComponent implements OnInit {
 
   removerDoCarrinho(idProduto: number, idPedido: number) {
     this.pedidoService.removerItemDoCarrinho(idProduto, idPedido).subscribe(() => {
-      this.alertas.alertaMensagem('Item removido do carrinho!');
+      alert('Item removido do carrinho!');
 
       this.findByIdProdutosCarrinho();
       this.findByIdPedido();
@@ -160,7 +168,7 @@ export class PedidoComponent implements OnInit {
     this.pedidoService.postPedido(this.pedido).subscribe((resp: Pedido) => {
       this.pedido = resp;
 
-      this.alertas.alertaMensagem('Pedido cadastrado com sucesso');
+      alert('Pedido cadastrado com sucesso');
 
       this.router.navigate(['/pedido']);
 

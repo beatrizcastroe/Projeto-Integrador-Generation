@@ -1,26 +1,39 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-3">
-      <div class="nav flex-column nav-pills sidebar" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link text-white" id="v-pills-produto-tab" data-toggle="pill" href="#v-pills-produto" role="tab"
-          aria-controls="v-pills-produto" aria-selected="true">Produtos</a>
+<div class="container-fluid p-0">
+  <div class="row mr-0 ml-0">
+    <div class="col-md-2 bg p-0">
+      <div class="nav flex-column nav-pills"  style="height: 100vh;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a routerLink='/home' class="nav-link text-white"
+        id="v-pills-settings-tab" data-toggle="pill" role="tab" aria-controls="v-pills-settings"
+        aria-selected="false"><b>eco</b>us</a>
+        <a class="nav-link  text-white" id="v-pills-inicio-tab" data-toggle="pill" href="#v-pills-inicio" role="tab"
+          aria-controls="v-pills-inicio" aria-selected="true">Início</a>
+        <a class="nav-link  text-white" id="v-pills-produto-tab" data-toggle="pill" href="#v-pills-produto" role="tab"
+          aria-controls="v-pills-produto" aria-selected="false">Produtos</a>
         <a class="nav-link text-white" id="v-pills-categoria-tab" data-toggle="pill" href="#v-pills-categoria"
           role="tab" aria-controls="v-pills-categoria" aria-selected="false">Categorias</a>
         <a class="nav-link text-white" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-usuario" role="tab"
           aria-controls="v-pills-usuario" aria-selected="false">Usuários</a>
-        <a class="nav-link text-white" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-          aria-controls="v-pills-settings" aria-selected="false">Perfil</a>
+        <!-- <a class="nav-link text-white" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Perfil</a> -->
         <a routerLink='/login-backend' routerLinkActive="router-link-active" class="nav-link text-white"
           id="v-pills-settings-tab" data-toggle="pill" role="tab" aria-controls="v-pills-settings"
           aria-selected="false">Sair</a>
       </div>
     </div>
-    <div class="col-9">
+    <div class="col-md-10 p-0">
       <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-produto" role="tabpanel"
-          aria-labelledby="v-pills-produto-tab">
+        <div class="tab-pane fade show active" id="v-pills-inicio" role="tabpanel" aria-labelledby="v-pills-inicio-tab">
           <div class="container">
-            <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novoProduto">Cadastrar Produto</button>
+              <h2 class="text-center mt-2">Bem vindos(as) ao sistema de gerenciamento <b>eco</b>us!!</h2>
+              <!-- <div class="img mt-4">
+                <img src="https://i.imgur.com/kHGDwoc.jpg" alt="logo ecous">
+              </div> -->
+            </div>
+        </div>
+        <div class="tab-pane fade " id="v-pills-produto" role="tabpanel"
+          aria-labelledby="v-pills-produto-tab">
+          <div class="container content-top">
+            <span>Sistema de Gerenciamento</span>
+            <button class="btn btn-top" data-toggle="modal" data-target="#novoProduto">Cadastrar Produto</button>
           </div>
           <table class="table">
             <thead class="thead text-white">
@@ -40,16 +53,17 @@
                 <td>{{item.categoriaRelacionada.nomeSubcategoria}}</td>
                 <td>{{item.marca}}</td>
                 <td>R$ {{item.preco}}</td>
-                <td class="d flex justify-content-end">
-                  <button class="btn btnY mr-3" [routerLink]="['/produto-edit', item.idProduto]">Editar</button>
+                <td class="buttons">
+                  <button class="btn btnY mr-2" [routerLink]="['/produto-edit', item.idProduto]">Editar</button>
                   <button class="btn btn-delete" [routerLink]="['/produto-delete', item.idProduto]">Apagar</button>
                 </td>
             </tbody>
           </table>
         </div>
         <div class="tab-pane fade" id="v-pills-categoria" role="tabpanel" aria-labelledby="v-pills-categoria-tab">
-          <div class="container">
-            <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novaCategoria">Cadastrar
+          <div class="container content-top">
+            <span>Sistema de Gerenciamento</span>
+            <button class="btn btn-top" data-toggle="modal" data-target="#novaCategoria">Cadastrar
               Categoria</button>
           </div>
           <table class="table">
@@ -66,16 +80,17 @@
                 <td>{{item.idCategoria}}</td>
                 <td>{{item.nomeCategoria}}</td>
                 <td>{{item.nomeSubcategoria}}</td>
-                <td class="d flex justify-content-end">
-                  <button class="btn btnY mr-3" [routerLink]="['/categoria-edit', item.idCategoria]">Editar</button>
+                <td class="buttons">
+                  <button class="btn btnY mr-2" [routerLink]="['/categoria-edit', item.idCategoria]">Editar</button>
                   <button class="btn btn-delete" [routerLink]="['/categoria-delete', item.idCategoria]">Apagar</button>
                 </td>
             </tbody>
           </table>
         </div>
         <div class="tab-pane fade" id="v-pills-usuario" role="tabpanel" aria-labelledby="v-pills-usuario-tab">
-          <div class="container">
-            <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novoUsuario">Cadastrar
+          <div class="container content-top">
+            <span>Sistema de Gerenciamento</span>
+            <button class="btn btn-top" data-toggle="modal" data-target="#novoUsuario">Cadastrar
               Usuario</button>
           </div>
           <table class="table">
@@ -92,19 +107,16 @@
                 <td>{{item.idUsuario}}</td>
                 <td>{{item.nome}}</td>
                 <td>{{item.email}}</td>
-                <td class="d flex justify-content-end">
-                  <button class="btn btnY mr-3" [routerLink]="['/usuario-edit', item.idUsuario]">Editar</button>
+                <td class="buttons">
+                  <button class="btn btnY mr-2" [routerLink]="['/usuario-edit', item.idUsuario]">Editar</button>
                   <button class="btn btn-delete" [routerLink]="['/usuario-delete', item.idUsuario]">Apagar</button>
                 </td>
             </tbody>
           </table>
         </div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...
-        </div>
       </div>
     </div>
   </div>
-
 </div>
 
 <!-- MODAL - CADASTRAR PRODUTO -->
@@ -157,7 +169,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-delete" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btnY" (click)='publicar()' data-dismiss="modal">Publicar</button>
+          <button type="button" class="btn btnY" (click)='publicar()' data-dismiss="modal">Cadastrar</button>
         </div>
       </div>
     </div>
@@ -245,3 +257,10 @@
   </div>
 </div>
 <!-- FIM MODAL - CADASTRAR USUARIO -->
+
+
+<!-- FOOTER -->
+
+<footer>
+  <span>© 2021 Copyright: <b>eco</b>us</span>
+</footer>

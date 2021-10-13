@@ -5,7 +5,6 @@ import { ListaDeDesejos } from '../model/ListaDeDesejos';
 import { Pedido } from '../model/Pedido';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
-import { AlertasService } from '../service/alerta.service';
 import { AuthService } from '../service/auth.service';
 import { CepService } from '../service/cep.service';
 import { ClienteService } from '../service/cliente.service';
@@ -61,7 +60,6 @@ export class PerfilComponent implements OnInit {
     private listaDeDesejosService: ClienteService,
     private authService: AuthService,
     private produtoService: ProdutoService,
-    private alertas: AlertasService,
 
      /* DADOS CARRINHO USUARIO */
      private pedidoService: PedidoService
@@ -135,7 +133,7 @@ export class PerfilComponent implements OnInit {
 
   removerDaListaDeDesejos(idProduto: number, idLista: number) {
     this.listaDeDesejosService.removerItemListaDeDesejos(idProduto, idLista).subscribe(() => {
-      this.alertas.alertaMensagem('Item removido da lista de desejos');
+      alert('Item removido da lista de desejos');
 
       this.findByIdPedido();
       this.findByIdListaDeDesejos();
@@ -189,7 +187,7 @@ export class PerfilComponent implements OnInit {
             }
 
             // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
-            this.listaDeProdutos[i].qntPedidoProduto = contador;
+            this.listaDeProdutos[i].qtdPedidoProduto = contador;
 
           }
 
@@ -236,7 +234,7 @@ export class PerfilComponent implements OnInit {
 
   removerDoCarrinho(idProduto: number, idPedido: number) {
     this.pedidoService.removerItemDoCarrinho(idProduto, idPedido).subscribe(() => {
-      this.alertas.alertaMensagem('Item removido do carrinho!');
+      alert('Item removido do carrinho!');
 
       this.findByIdProdutosCarrinho();
       this.findByIdPedido();
@@ -250,7 +248,7 @@ export class PerfilComponent implements OnInit {
     this.pedidoService.postPedido(this.pedido).subscribe((resp: Pedido) => {
       this.pedido = resp;
 
-      this.alertas.alertaMensagem('Pedido cadastrado com sucesso');
+      alert('Pedido cadastrado com sucesso');
 
       this.router.navigate(['/pedido']);
 

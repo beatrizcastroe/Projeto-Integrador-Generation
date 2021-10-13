@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
-import { AlertasService } from './alerta.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,22 +25,22 @@ export class AuthService {
 
     private http: HttpClient,
     private router: Router,
-    private alertas: AlertasService
+   
   
   ) { }
 
   entrar (userLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.put<UsuarioLogin>('https://ecousteste.herokuapp.com/usuarios/login', userLogin)
+    return this.http.put<UsuarioLogin>(`${this.endereco}/usuarios/login`, userLogin)
 
   }
 
   cadastrar(user: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('https://ecousteste.herokuapp.com/usuarios/novousuario', user)
+    return this.http.post<Usuario>(`${this.endereco}/usuarios/novousuario`, user)
 
   }
 
   getAllUsuarios(): Observable<Usuario[]>{
-    return this.http.get<Usuario[]>('https://ecousteste.herokuapp.com/usuarios')
+    return this.http.get<Usuario[]>(`${this.endereco}/usuarios`)
   }
 
   /* PESQUISA UM USUARIO POR ID */

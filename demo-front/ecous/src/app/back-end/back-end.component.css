@@ -1,13 +1,23 @@
-.sidebar{
+
+.nav{
     background-color: #BCAD76;
-    height: 100%;
+    padding: .8rem;
+    height: auto;
 }
+
+
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
     background-color: #BCAD76;
 }
+.nav a{
+    font-weight: 200;
+    font-size: 1.2rem;
+    transition: 300ms;
+}
 
-a:hover{
+.nav a:hover{
+    font-weight: 400;
     background-color: hsla(0, 0%, 90%, 0.712);;
 }
 
@@ -15,11 +25,52 @@ a:hover{
     background-color: #BCAD76;
 }
 
+tbody tr{
+    transition: 300ms;
+}
+
 tbody tr:hover{
     cursor: pointer;
     background-color: hsla(0, 0%, 90%, 0.712);
 }
 
+ .bg{
+    background-color: #BCAD76;
+}
+
+
+/* H2 */
+
+h2{
+    font-weight: 300;
+}
+
+
+ /* IMG INICIO
+.tab-pane .container .img{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+img{
+    width: 70%;
+    height: 70vh;
+    text-align: center;
+    filter:opacity(80%)
+} */
+
+/* TOP TABLE */
+
+.content-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-top span{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
 
 /* BUTTONS */
 
@@ -30,5 +81,43 @@ tbody tr:hover{
 
 .btn-delete{
     background-color: #c81939;
+    color: #fff;
+}
+
+.btn-top{
+    background-color: #6b6d4a;
+    color: #fff;
+}
+
+/* TABLE */
+
+tr, tbody{
+    text-align: center;
+}
+.btn-top{
+    float: right;
+    margin: 1.2rem 0;
+}
+
+.table td, .table th {
+
+    vertical-align:inherit;
+}
+
+.buttons{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+/* FOOTER */
+footer{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #BCAD76;
+}
+
+footer span{
     color: #fff;
 }

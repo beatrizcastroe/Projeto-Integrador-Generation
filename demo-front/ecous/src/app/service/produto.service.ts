@@ -28,15 +28,15 @@ export class ProdutoService {
   }
 
   getAllProdutos(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('https://ecousteste.herokuapp.com/produtos')
+    return this.http.get<Produto[]>(`${this.endereco}/produtos`)
   }
 
   getByIdProduto(idProduto: number): Observable<Produto>{
-    return this.http.get<Produto>(`https://ecousteste.herokuapp.com/produtos/idproduto/${idProduto}`)
+    return this.http.get<Produto>(`${this.endereco}/produtos/idproduto/${idProduto}`)
   }
   
   getByIdUser(idUsuario: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`https://ecousteste.herokuapp.com/usuarios/idusuario/${idUsuario}`)
+    return this.http.get<Usuario>(`${this.endereco}/usuarios/idusuario/${idUsuario}`)
   }
 
   findAllByProdutos(): Observable<Produto[]> {

@@ -14,7 +14,7 @@ export class Produto {
     public categoriaRelacionada: Categoria
     public estoque: number
     public pedidos: Pedido []
-    public qntPedidoProduto: number
+    public qtdPedidoProduto: number
 }
 
 
