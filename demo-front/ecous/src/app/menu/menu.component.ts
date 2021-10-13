@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit {
     if (environment.token == ''){
       this.router.navigate(['/login'])
     } else {
-      this.router.navigate(['/perfil'])
+      this.router.navigate(['/perfil/:id'])
     }
   }
 

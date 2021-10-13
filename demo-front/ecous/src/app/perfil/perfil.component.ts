@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { ListaDeDesejos } from '../model/ListaDeDesejos';
 import { Pedido } from '../model/Pedido';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
 import { CepService } from '../service/cep.service';
 import { ClienteService } from '../service/cliente.service';
@@ -32,6 +33,7 @@ export class PerfilComponent implements OnInit {
   listaDeDesejos: Produto[];
   listaDeProdutoMemoria: Produto[];
 
+  usuarioLogin: UsuarioLogin = new UsuarioLogin;
   usuario: Usuario = new Usuario();
   confirmarSenha: string;
   tipoUsuario: string;
@@ -52,6 +54,7 @@ export class PerfilComponent implements OnInit {
   idCarrinho = environment.pedidos;
 
   idMemoria: number;
+
   /* ###################### */
 
   constructor(
@@ -60,6 +63,7 @@ export class PerfilComponent implements OnInit {
     private listaDeDesejosService: ClienteService,
     private authService: AuthService,
     private produtoService: ProdutoService,
+    private route: ActivatedRoute,
 
      /* DADOS CARRINHO USUARIO */
      private pedidoService: PedidoService
@@ -68,6 +72,10 @@ export class PerfilComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
 
+    let id = environment.idUsuario
+    this.findByIdUsuario(id)
+    this.findByIdUsuarioLogin(id)
+
     this.findByIdListaDeDesejos();
     this.findByIdUsuario(environment.idUsuario);
     //this.findAllByProduto();
@@ -75,6 +83,7 @@ export class PerfilComponent implements OnInit {
     /* DADOS CARRINHO USUARIO */
     this.findByIdProdutosCarrinho();
     this.findByIdPedido();
+    
   }
 
   consultaCep(valor:string, form){
@@ -91,6 +100,15 @@ export class PerfilComponent implements OnInit {
     })
   }
 
+  findByIdUsuarioLogin(id: number) {
+    this.authService.findByIdClienteUsuarioLogin(id).subscribe((resp: UsuarioLogin) => {
+      this.usuarioLogin = resp;
+
+      console.log("Nome: "+ this.usuario.nome);
+
+    })
+
+  }
 
   findByIdUsuario(id: number) {
     this.authService.findByIdCliente(id).subscribe((resp: Usuario) => {
@@ -256,6 +274,27 @@ export class PerfilComponent implements OnInit {
 
   }
 
+  cadastrarEndereco() {
+   
+ 
+      //this.usuarioLogin.listaDeDesejos = new ListaDeDesejos
+      //this.usuarioLogin.pedidos = new Pedido
+      console.log("user"+JSON.stringify(this.usuarioLogin))
+      console.log("confirmarSenha"+ this.confirmarSenha)
+      this.authService.atualizar(this.usuarioLogin).subscribe((resp: UsuarioLogin) =>{
+        this.usuarioLogin = resp 
+        //this.router.navigate(['/perfil/:id'])
+        alert('Endereço atualizado com sucesso')
+      })
+
+    }
+
+    confirmSenha(event: any) {
+      this.confirmarSenha = event.target.value
+    }
+
+  }
+
   /* PEMISSAO DE ADMINISTRADOR 
   adm (){
     let permissao = false;
@@ -269,4 +308,4 @@ export class PerfilComponent implements OnInit {
 
   }*/
 
-}
+

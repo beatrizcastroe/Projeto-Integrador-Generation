@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
   }
+  
   cadastrar() {
     console.log("user"+JSON.stringify(this.user))
     console.log("confirmarSenha"+ this.confirmarSenha)

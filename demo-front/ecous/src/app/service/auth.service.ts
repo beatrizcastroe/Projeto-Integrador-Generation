@@ -49,8 +49,15 @@ export class AuthService {
     return this.http.get<Usuario>(`${this.endereco}/usuarios/idusuario/${id}`, this.autorizacao);
   }
 
-  
+  findByIdClienteUsuarioLogin(id: number): Observable<UsuarioLogin> {
 
+    return this.http.get<UsuarioLogin>(`${this.endereco}/usuarios/idusuario/${id}`, this.autorizacao);
+  }
+
+
+  atualizar(userLogin: UsuarioLogin): Observable<UsuarioLogin> {
+    return this.http.put<UsuarioLogin>(`${this.endereco}/usuarios/atualizarusuario`, userLogin); 
+  }
 
   fomenu(){
     let ok = false

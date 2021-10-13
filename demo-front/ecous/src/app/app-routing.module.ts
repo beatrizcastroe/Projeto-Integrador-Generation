@@ -40,7 +40,7 @@ const routes: Routes = [
   {path: 'produtos', component: ListagemProdutoComponent},
   {path: 'produto/:id', component: DetalheProdutoComponent},
   {path: 'login-backend', component: LoginBackendComponent},
-  {path: 'perfil', component: PerfilComponent},
+  {path: 'perfil/:id', component: PerfilComponent},
   {path: 'pedido', component: PedidoComponent}
 
 
