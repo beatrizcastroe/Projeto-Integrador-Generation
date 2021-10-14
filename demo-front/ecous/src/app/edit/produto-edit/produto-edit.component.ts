@@ -39,6 +39,8 @@ export class ProdutoEditComponent implements OnInit {
   findByIdProduto(idProduto: number) {
     this.produtoService.getByIdProduto(idProduto).subscribe((resp: Produto) => {
       this.produto = resp
+      console.log(idProduto);
+      
     })
   }
 
@@ -56,7 +58,8 @@ export class ProdutoEditComponent implements OnInit {
   }
 
   atualizar() {
-
+    console.log("user"+JSON.stringify(this.produto))
+    
     this.categoria.idCategoria = this.idCategoria
     this.produto.categoriaRelacionada = this.categoria
 

@@ -32,6 +32,12 @@
             </div>
 
             <div class="form-group">
+                <label for="estoque">Estoque</label>
+                <input [(ngModel)]="produto.estoque" type="number" class="form-control" id="estoque"
+                    placeholder="Digite o estoque do produto">
+            </div>
+
+            <div class="form-group">
                 <label for="foto">Foto</label>
                 <input [(ngModel)]="produto.foto" type="text" class="form-control" id="foto"
                     placeholder="Digite o link da foto do produto">
@@ -40,7 +46,7 @@
             <div class="form-group">
                 <label for="tema">Escolha uma categoria: </label>
                 <select class="form-control" name="categoria" id="categoria" [(ngModel)]="idCategoria" (change)='findByIdCategoria()'>
-                    <option *ngFor="let item of listaCategorias" value="{{item.idCategoria}}">{{item.nomeCategoria}}</option>
+                    <option *ngFor="let item of listaCategorias" value="{{item.idCategoria}}">{{item.nomeSubcategoria}}</option>
                 </select>
             </div>
 
