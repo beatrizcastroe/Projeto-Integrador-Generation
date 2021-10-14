@@ -70,7 +70,7 @@ p {
     border: #dee2e6;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 2px 1rem rgb(0 0 0 / 15%);
+    box-shadow: 5px 3px 20px hsl(0, 0%, 70%);
     line-height: 3rem;
 }
 
