@@ -121,3 +121,22 @@ footer{
 footer span{
     color: #fff;
 }
+
+/* media only screen */
+
+@media only screen and (min-width:400px) and (max-width:768px){
+    
+    .container-fluid{
+        width: 100vw;
+   
+    }
+     .row{
+        width: 20vw;
+        display: flex;
+    }
+
+    h2 .text-center{
+        display: flex;
+    }
+
+}

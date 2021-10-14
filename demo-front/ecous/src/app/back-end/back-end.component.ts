@@ -80,8 +80,8 @@ export class BackEndComponent implements OnInit {
     this.categoria.idCategoria = this.idCategoria
     this.produto.categoriaRelacionada = this.categoria
 
-    this.user.idUsuario = this.idUsuario
-    this.produto.usuarioRelacionado = this.user
+    //this.user.idUsuario = this.idUsuario
+    // this.produto.usuarioRelacionado = this.user
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
