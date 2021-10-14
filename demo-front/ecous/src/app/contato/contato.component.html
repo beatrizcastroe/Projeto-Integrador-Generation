@@ -8,29 +8,31 @@
 <div class="container mt-5">
     <div class="row ">
         <div class="col-md-4 text-center t mb-4 mb-md-0">
-            <h4>Central de atendimento</h4>
-            <p class="text-muted">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class="text-muted"><strong>+55 1111-1111</strong></p>
+            <h4>Central de atendimento:</h4>
+            <p class="text-muted">Criamos essa área para você contar pra gente a sua experiência com os nossos produtos
+                e serviços. Queremos te ouvir para entender, cada vez mais, as suas necessidades e desejos.</p>
+            <p class="text-muted"><strong>central@ecous.com</strong></p>
+            <p class="text-muted"><strong>+55 11 2211-2211</strong></p>
         </div>
         <div class="col-md-4 text-center">
-            <h4>Suporte Técnico</h4>
-            <p class="text-muted">Please feel free to write an email to us or to use our electronic ticketing system.
+            <h4>Suporte Técnico:</h4>
+            <p class="text-muted">Esse espaço é dedicado a você para falar de compras via site.
+                Atendimento todos os dias das 08h às 21h
             </p>
             <ul class="list-unstyled text-muted">
-                <li>info@ecous.com</li>
                 <li>suporte@ecous.com</li>
             </ul>
         </div>
         <div class="col-md-4 text-center ">
-            <h4>Address</h4>
-            <p class="text-muted">13/25 New Avenue<br>New Heaven, 45Y 73J<br>England, <strong>Great Britain</strong></p>
+            <h4>Endereço:</h4>
+            <p class="text-muted"><br>Rua Generation Brasil, 413 <br>São Paulo, <strong>Brasil</strong></p>
         </div>
         <div class="col-md-4 text-center text-md-left mb-4 mb-md-0">
         </div>
     </div>
 </div>
 <hr>
-<div class="container mt-5 ">
+<form class="container mt-5 ">
     <div class="row d-flex justify-content-center">
         <div class="col-lg-4 mr-3">
             <h5 class="display-2 font-weight-bold mb-4 mb-lg-5" style="line-height: 1;">Fale Conosco</h5>
@@ -44,32 +46,39 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label class="form-label" for="nameContact">Nome *</label>
+                        <label class="form-label" for="nameContact">Nome <span class="asterisco">*</span></label>
                         <input class="form-control form-control-underlined" type="text" name="nameContact" id="name"
-                            required="required">
+                            required="required" (input)="getNome($event)">
+                        <div *ngIf="!validNome"><span class="validacao">Campo Obrigatório</span></div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label class="form-label" for="surnameContact">Sobrenome *</label>
+                        <label class="form-label" for="surnameContact">Sobrenome <span
+                                class="asterisco">*</span></label>
                         <input class="form-control form-control-underlined" type="text" name="surnameContact"
-                            id="surname" required="required">
+                            id="surname" required="required" (input)="getSobrenome($event)">
+                        <div *ngIf="!validSobrenome"><span class="validacao">Campo Obrigatório</span></div>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="form-label" for="emailContact">Email *</label>
+                <label class="form-label" for="emailContact">Email <span class="asterisco">*</span></label>
                 <input class="form-control form-control-underlined" type="email" name="emailContact" id="email"
-                    required="required">
+                    required="required" (input)="getEmail($event)">
+                <div *ngIf="!validEmail"><span class="validacao">Campo Obrigatório</span></div>
+                <div *ngIf="validCaracterEmail"><span class="validacao">Email inválido</span></div>
             </div>
             <div class="form-group">
-                <label class="form-label" for="messageContact">Mensagem*</label>
+                <label class="form-label" for="messageContact">Mensagem <span class="asterisco">*</span></label>
                 <textarea class="form-control form-control-underlined" rows="4" name="messageContact" id="message"
-                    required="required"></textarea>
+                    required="required" (input)="getMensagem($event)"></textarea>
+                <div *ngIf="!validMensagem"><span class="validacao">Campo Obrigatório</span></div>
+                <div *ngIf="validCaracter"><span class="validacao">Minímo de 10 caracteres</span></div>
+
             </div>
-            <button class="btn btn-outline-primary mt-3" type="submit">Envie </button>
+            <button class="btn btn-outline-primary mt-3" (click)="enviar($event)" [disabled]="false"
+                type="submit">Enviar</button>
         </div>
-
-
     </div>
-</div>
+</form>

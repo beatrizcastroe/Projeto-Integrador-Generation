@@ -37,4 +37,12 @@ a {
     font-weight: 700 !important;
 }
 
+.asterisco{
+    color: red;
+}
+.validacao{
+    font-size: .78rem;
+    color: red;
+}
+
 
