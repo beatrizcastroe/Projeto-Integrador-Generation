@@ -1,3 +1,6 @@
+textarea{
+    resize: none;
+}
 
 .d-none {
     display: none !important;

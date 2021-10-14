@@ -1,3 +1,7 @@
+textarea{
+    resize: none;
+}
+
 a {
     color: #bcac76;
     text-decoration: none;

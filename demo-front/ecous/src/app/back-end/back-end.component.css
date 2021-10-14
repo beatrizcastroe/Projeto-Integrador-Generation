@@ -1,3 +1,6 @@
+textarea{
+    resize: none;
+}
 
 .nav{
     background-color: #BCAD76;

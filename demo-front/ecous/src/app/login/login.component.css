@@ -1,3 +1,7 @@
+textarea{
+    resize: none;
+}
+
 body {
     margin: 0;
     font-family: "vremenagrotesk",sans-serif;

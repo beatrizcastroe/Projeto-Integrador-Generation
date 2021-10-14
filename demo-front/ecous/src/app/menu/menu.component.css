@@ -1,3 +1,7 @@
+textarea{
+    resize: none;
+}
+
 .header-absolute {
     position: absolute;
     top: 0;

@@ -1,3 +1,7 @@
+textarea{
+  resize: none;
+}
+
 .hero {
   background-repeat: no-repeat;
   background-position: center center;
