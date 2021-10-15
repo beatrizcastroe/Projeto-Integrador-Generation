@@ -34,7 +34,9 @@ textarea{
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
+}
+p.text-sm.text-muted{
+    margin-bottom: .4rem;
 }
 
 .h6 {
