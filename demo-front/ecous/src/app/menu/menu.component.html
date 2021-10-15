@@ -1,53 +1,60 @@
 <!-- navbar-->
 <header class="header shadow-sm bg-white rounded">
-    <!-- Top Bar-->
-    <div class="top-bar text-sm bg-white">
-      <div class="container-fluid px-lg-5 mt-2">
-        <div class="row align-items-center">
-          <div class="col-md-4 d-none d-md-block">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-2"><a class="text-reset text-hover-primary" href="https://www.facebook.com/generationbrasil" target="_blank"><i
-                    class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li class="list-inline-item mr-4"><a class="text-reset text-hover-primary" href="https://www.instagram.com/generationbrasil/" target="_blank"><i
-                    class="fa fa-instagram" aria-hidden="true"></i></a></li>
-              <li class="list-inline-item mr-2"><a class="text-reset text-hover-primary" href="https://www.whatsapp.com/?lang=pt_br" target="_blank"> <i class="fa fa-whatsapp" aria-hidden="true"></i> 4002-8922</a>
-               
-              </li>
-            </ul>
-          </div>
-          <div class="col-sm-6 col-md-4 text-left text-md-center">
-            <p class="mb-0">we are <b>eco</b>us</p>
-          </div>
+  <!-- Top Bar-->
+  <div class="top-bar text-sm bg-white">
+    <div class="container-fluid px-lg-5 mt-2">
+      <div class="row align-items-center">
+        <div class="col-md-4 d-none d-md-block">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-2"><a class="text-reset text-hover-primary"
+                href="https://www.facebook.com/generationbrasil" target="_blank"><i class="fa fa-facebook"
+                  aria-hidden="true"></i></a></li>
+            <li class="list-inline-item mr-4"><a class="text-reset text-hover-primary"
+                href="https://www.instagram.com/generationbrasil/" target="_blank"><i class="fa fa-instagram"
+                  aria-hidden="true"></i></a></li>
+            <li class="list-inline-item mr-2"><a class="text-reset text-hover-primary"
+                href="https://www.whatsapp.com/?lang=pt_br" target="_blank"> <i class="fa fa-whatsapp"
+                  aria-hidden="true"></i> 4002-8922</a>
+
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-4 text-left text-md-center">
+          <p class="mb-0">we are <b>eco</b>us</p>
         </div>
       </div>
     </div>
-    <!-- Top Bar End-->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light px-lg-5 "><a class="navbar-brand"
-        routerLink='/home' ><strong>eco</strong>us</a>
-      <ul class="list-inline mb-0 d-block d-lg-none">
-        <li class="list-inline-item mr-3"><a class="text-dark text-hover-primary" href="#" data-toggle="modal"
-            data-target="#loginModal">
-            <i class="fa fa-user-o" aria-hidden="true"></i></a></li>
-        <li class="list-inline-item mr-3"><a class="text-dark text-hover-primary position-relative" href="wishlist.html">
-            <i class="fa fa-heart-o" aria-hidden="true" ></i>
-            <div class="navbar-icon-badge">3</div>
-          </a></li>
-        <li class="list-inline-item position-relative mr-3"><a class="text-dark text-hover-primary" href="#"
-            data-toggle="modal" data-target="#sidebarCart">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            <div class="navbar-icon-badge">5</div>
-          </a></li>
-      </ul>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav mt-3 mt-lg-0">
-          <li class="nav-item"><a class="nav-link " id="homeDropdown" href="#" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false" routerLink='/quemsomos'>quem somos</a>
-          </li>
-          <li class="nav-item dropdown"><a class="nav-link " id="shopDropdown" href="#" data-toggle="dropdown"
+  </div>
+  <!-- Top Bar End-->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light px-lg-5 "><a class="navbar-brand"
+      routerLink='/home'><strong>eco</strong>us</a>
+    <ul class="list-inline mb-0 d-block d-lg-none">
+      <li routerLink='/perfil' class="list-inline-item mr-3"><a class="text-dark text-hover-primary" data-toggle="modal"
+          data-target="#loginModal">
+          <i class="fa fa-user-o" aria-hidden="true"></i></a></li>
+      <li routerLink='/perfil' class="list-inline-item mr-3"><a class="text-dark text-hover-primary position-relative">
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
+          <!-- <div class="navbar-icon-badge"></div> -->
+        </a></li>
+      <li routerLink='/pedido' class="list-inline-item position-relative mr-3"><a class="text-dark text-hover-primary"
+          data-toggle="modal" data-target="#sidebarCart">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <!-- <div class="navbar-icon-badge"></div> -->
+        </a></li>
+    </ul>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mt-3 mt-lg-0">
+        <li class="nav-item"><a class="nav-link " id="homeDropdown" href="#" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" routerLink='/quemsomos'>quem somos</a>
+        </li>
+        <li class="nav-item"><a class="nav-link " id="homeDropdown" href="#" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" routerLink='/produtos'>loja</a>
+        </li>
+        <!-- <li class="nav-item dropdown"><a class="nav-link " id="shopDropdown" href="#" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">loja</a>
             <div class="dropdown-menu py-0"  aria-labelledby="shopDropdown" data-min-width="750px"
               data-translate-x="-50px">
@@ -72,40 +79,40 @@
                 </div>
               </div>
             </div>
-          </li>
-          <li class="nav-item"><a  class="nav-link " id="homeDropdown"  routerLink='/quemsomos' data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">parceiros</a>
-          </li>
-          <li class="nav-item"><a class="nav-link " id="homeDropdown" routerLink='/contato' data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">contato</a>
-          </li>
-        </ul>
-        <form class="d-lg-flex ml-auto mr-lg-5 mr-xl-6 my-4 my-lg-0" action="#">
-          <div class="input-group input-group-underlined">
-            <input class="form-control pl-3" type="text" placeholder="pesquise aqui" aria-label="pesquise aqui"
-              aria-describedby="button-search">
-            <div class="input-group-append ml-0">
-              <button class="btn btn-underlined py-0" id="button-search" type="button">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </div>
+          </li> -->
+        <!-- <li class="nav-item"><a class="nav-link " id="homeDropdown" href="quemsomos#projeto" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">projeto</a>
+        </li> -->
+        <li class="nav-item"><a class="nav-link " id="homeDropdown" routerLink='/contato' data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">contato</a>
+        </li>
+      </ul>
+      <form class="d-lg-flex ml-auto mr-lg-5 mr-xl-6 my-4 my-lg-0" action="#">
+        <div class="input-group input-group-underlined">
+          <input class="form-control pl-3" type="text" placeholder="pesquise aqui" aria-label="pesquise aqui"
+            aria-describedby="button-search">
+          <div class="input-group-append ml-0">
+            <button class="btn btn-underlined py-0" id="button-search" type="button">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
           </div>
-        </form>
-        <ul class="list-inline mb-0 d-none d-lg-block">
-          <li class="list-inline-item mr-3"><a (click)='perfil()' class="text-dark text-hover-primary"  data-toggle="modal"
-              data-target="#loginModal">
-              <i class="fa fa-user-o" aria-hidden="true"></i></a></li>
-          <li class="list-inline-item mr-3"><a class="text-dark text-hover-primary position-relative"
-              href="wishlist.html">
-              <i class="fa fa-heart-o" aria-hidden="true"></i>
-              <div class="navbar-icon-badge">3</div>
-            </a></li>
-          <li class="list-inline-item position-relative mr-3"><a class="text-dark text-hover-primary" routerLink='/pedido'
-              data-toggle="modal" data-target="#sidebarCart">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              <div class="navbar-icon-badge">5</div>
-            </a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+        </div>
+      </form>
+      <ul class="list-inline mb-0 d-none d-lg-block">
+        <li class="list-inline-item mr-3"><a (click)='perfil()' class="text-dark text-hover-primary" data-toggle="modal"
+            data-target="#loginModal">
+            <i class="fa fa-user-o" aria-hidden="true"></i></a></li>
+        <li routerLink='/perfil' class="list-inline-item mr-3"><a
+            class="text-dark text-hover-primary position-relative">
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <!-- <div class="navbar-icon-badge">3</div> -->
+          </a></li>
+        <li class="list-inline-item position-relative mr-3"><a class="text-dark text-hover-primary" routerLink='/pedido'
+            data-toggle="modal" data-target="#sidebarCart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <!-- <div class="navbar-icon-badge">5</div> -->
+          </a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
