@@ -72,9 +72,9 @@ export class PerfilComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
 
-    // if (environment.token == ''){
-    //   this.router.navigate(['/login'])
-    // }
+    if (environment.token == ''){
+      this.router.navigate(['/login'])
+    }
 
     let id = environment.idUsuario
     this.findByIdUsuario(id)

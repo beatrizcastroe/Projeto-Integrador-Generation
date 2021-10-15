@@ -18,12 +18,14 @@ export class PedidoComponent implements OnInit {
 
   pedido: Pedido = new Pedido();
   listaDePedidos: Pedido[];
+  qtdItensProdutos: number;
 
   listaDeProdutos: Produto[];
   memoria: Produto[] = [];
   memoriaV: Produto[] = [];
 
   idCarrinho = environment.pedidos;
+  valorCarrinho: number;
 
   idMemoria: number;
 
@@ -38,9 +40,9 @@ export class PedidoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    /*if(environment.token == '') {
+    if(environment.token == '') {
       this.router.navigate(['/login']);
-    }*/
+    }
 
     if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);
@@ -70,75 +72,144 @@ export class PedidoComponent implements OnInit {
     })
   }*/
 
+//   findByIdProdutosCarrinho() {
+//     this.pedidoService.findAllByProdutosPedidos(environment.pedidos).subscribe((resp: Produto[]) => {
+//       this.listaDeProdutos = resp;
+
+//       let contador: number = 0;
+//       let repeticao: number = 0;
+
+//       // CRIA UM VETOR PARA SERVIR DE REFERENCIA NAS VALIDACOES
+//       let pivo: number[] = [this.listaDeProdutos.length];
+
+//       for(let i = 0; i < this.listaDeProdutos.length; i++) {
+//         // ARMAZENA O ID DENTRO DO PIVO PARA SERVIR DE REFERENCIA
+//         pivo[i] = this.listaDeProdutos[i].idProduto;
+
+//         // ENTRA NO LOOP DO PRODUTO TRABALHO NO MOMENTO
+//         for(let item of this.listaDeProdutos) {
+//           // VERIFICA SE O VALOR DO PIVO E O MESMO DO ID DO LOOP ATUAL NO QUAL ESTAMOS TRABALHANDO
+//           if(pivo[i] == item.idProduto) {
+//             // ADICIONA UM AO CONTADOR
+//             contador++;
+
+//           }
+
+//           // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
+//           this.listaDeProdutos[i].qtdPedidoProduto = contador;
+
+//         }
+
+//         // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
+//        // this.memoria = this.listaDeProdutos;
+
+//         /* AGRUPA OS ITENS REPETIDOS DENTRO DO ARRAY */
+//         this.listaDeProdutos = this.listaDeProdutos.filter((item, index, self) =>
+//           index === self.findIndex((t) => (
+//             t.nome === item.nome && t.descricao === item.descricao
+//           ))
+//         )
+// /*
+//         let ids = [];
+//         console.log(this.memoria[0].nome)
+//         for(let i = 0; i < this.memoria.length; i++) {
+//          this.nomex.push(this.memoria[i].nome);
+//         }
+
+//         for(let i = 0; i < this.memoria.length; i++) {
+//           for(let j = 0; j < this.memoria.length; j++) {
+//             if(ids.indexOf(this.memoria[j].nome) == -1) {
+//               this.memoriaV.push(this.memoria[i]);
+//             }
+//           }
+//         }
+
+//         console.log(this.memoriaV);
+
+//         this.listaDeProdutos = this.memoriaV;*/
+
+//         /*for(let q = 0; q < this.listaDeProdutos.length; q++) {
+//           for(let w = 0; w < this.listaDeProdutos.length; w++) {
+//             if(pivo[i] != repeticao && this.listaDeProdutos[pivo[q]] == this.memoriaV[w] ) {
+//               repeticao = pivo[i];
+//               this.memoriaV.push(this.listaDeProdutos[repeticao]);
+//             }
+//           }
+//         }*/
+
+//         // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
+//         contador = 0;
+
+// 			}
+
+//     })
+
+//   }
+
+/* ################################################################################# */
+  /* ################## DADOS CARRINHO USUARIO ################## */
+
   findByIdProdutosCarrinho() {
     this.pedidoService.findAllByProdutosPedidos(environment.pedidos).subscribe((resp: Produto[]) => {
       this.listaDeProdutos = resp;
 
-      let contador: number = 0;
-      let repeticao: number = 0;
+      try {
+        this.qtdItensProdutos = this.listaDeProdutos.length;
 
-      // CRIA UM VETOR PARA SERVIR DE REFERENCIA NAS VALIDACOES
-      let pivo: number[] = [this.listaDeProdutos.length];
+      }catch(erro){
+        //console.log('NAO FOI POSSIVEL CALCULAR OS ITENS!!');
+      }
 
-      for(let i = 0; i < this.listaDeProdutos.length; i++) {
-        // ARMAZENA O ID DENTRO DO PIVO PARA SERVIR DE REFERENCIA
-        pivo[i] = this.listaDeProdutos[i].idProduto;
+      try {
+        let contador: number = 0;
+        let repeticao: number = 0;
 
-        // ENTRA NO LOOP DO PRODUTO TRABALHO NO MOMENTO
-        for(let item of this.listaDeProdutos) {
-          // VERIFICA SE O VALOR DO PIVO E O MESMO DO ID DO LOOP ATUAL NO QUAL ESTAMOS TRABALHANDO
-          if(pivo[i] == item.idProduto) {
-            // ADICIONA UM AO CONTADOR
-            contador++;
+        // CRIA UM VETOR PARA SERVIR DE REFERENCIA NAS VALIDACOES
+        let pivo: number[] = [this.listaDeProdutos.length];
+
+        for(let i = 0; i < this.listaDeProdutos.length; i++) {
+          // ARMAZENA O ID DENTRO DO PIVO PARA SERVIR DE REFERENCIA
+          pivo[i] = this.listaDeProdutos[i].idProduto;
+
+          // ENTRA NO LOOP DO PRODUTO TRABALHO NO MOMENTO
+          for(let item of this.listaDeProdutos) {
+            // VERIFICA SE O VALOR DO PIVO E O MESMO DO ID DO LOOP ATUAL NO QUAL ESTAMOS TRABALHANDO
+            if(pivo[i] == item.idProduto) {
+              // ADICIONA UM AO CONTADOR
+              contador++;
+
+            }
+
+            // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
+            this.listaDeProdutos[i].qtdPedidoProduto = contador;
 
           }
 
-          // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
-          this.listaDeProdutos[i].qtdPedidoProduto = contador;
+          // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
+          this.memoria = this.listaDeProdutos;
+
+          // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
+          contador = 0;
 
         }
 
-        // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
-       // this.memoria = this.listaDeProdutos;
+      }catch(erro){
+        //console.log('OCORREU UM ERRO AO GERAR A LISTA DE PRODUTOS');
 
+      }
+
+      try{
         /* AGRUPA OS ITENS REPETIDOS DENTRO DO ARRAY */
         this.listaDeProdutos = this.listaDeProdutos.filter((item, index, self) =>
           index === self.findIndex((t) => (
             t.nome === item.nome && t.descricao === item.descricao
           ))
         )
-/*
-        let ids = [];
-        console.log(this.memoria[0].nome)
-        for(let i = 0; i < this.memoria.length; i++) {
-         this.nomex.push(this.memoria[i].nome);
-        }
 
-        for(let i = 0; i < this.memoria.length; i++) {
-          for(let j = 0; j < this.memoria.length; j++) {
-            if(ids.indexOf(this.memoria[j].nome) == -1) {
-              this.memoriaV.push(this.memoria[i]);
-            }
-          }
-        }
+      }catch(erro){
+        //console.log('OCORREU UM ERRO AO AGRUPAR O ARRAY);
 
-        console.log(this.memoriaV);
-
-        this.listaDeProdutos = this.memoriaV;*/
-
-        /*for(let q = 0; q < this.listaDeProdutos.length; q++) {
-          for(let w = 0; w < this.listaDeProdutos.length; w++) {
-            if(pivo[i] != repeticao && this.listaDeProdutos[pivo[q]] == this.memoriaV[w] ) {
-              repeticao = pivo[i];
-              this.memoriaV.push(this.listaDeProdutos[repeticao]);
-            }
-          }
-        }*/
-
-        // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
-        contador = 0;
-
-			}
+      }
 
     })
 
@@ -148,9 +219,20 @@ export class PedidoComponent implements OnInit {
     this.pedidoService.findByIdPedido(environment.pedidos).subscribe((resp: Pedido) => {
       this.pedido = resp;
 
+      /* ARREDONDA O VALOR DECIMAL DEIXANDO SOMENTE 2 CASAS APOS A VIRGULA */
+      this.valorCarrinho = Number(this.pedido.valorTotal.toFixed(2));
+
     })
 
   }
+
+  // findByIdPedido() {
+  //   this.pedidoService.findByIdPedido(environment.pedidos).subscribe((resp: Pedido) => {
+  //     this.pedido = resp;
+
+  //   })
+
+  // }
 
   removerDoCarrinho(idProduto: number, idPedido: number) {
     this.pedidoService.removerItemDoCarrinho(idProduto, idPedido).subscribe(() => {

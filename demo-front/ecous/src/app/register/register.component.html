@@ -12,7 +12,7 @@
                           <p class="text-muted text-center">Crie sua conta</p>
                           
                             <div class="form-group">
-                              <label class="form-label" for="registerName">Name</label>
+                              <label class="form-label" for="registerName">Nome</label>
                               <input [(ngModel)]="user.nome" class="form-control" id="registerName" type="text" >
                             </div>
                             <div class="form-group">
@@ -20,11 +20,11 @@
                               <input [(ngModel)]="user.email" class="form-control" id="registerEmail" type="text">
                             </div>
                             <div class="form-group">
-                              <label class="form-label" for="registerPassword">Password</label>
+                              <label class="form-label" for="registerPassword">Senha</label>
                               <input (input)='confirmSenha($event)' class="form-control" id="registerPassword" type="password">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="registerConfirmPassword">Confirm password</label>
+                                <label class="form-label" for="registerConfirmPassword">Confirme a senha</label>
                                 <input [(ngModel)]="user.senha"  class="form-control" id="registerConfirmPassword" type="password">
                               </div>
                             <div class="form-group text-center">
@@ -35,12 +35,12 @@
                               <a class="btn btn-block btn-outline-dark mt-4" routerLink='/login'> Voltar</a>
                             </div>
                           
-                          <hr class="my-3 hr-text letter-spacing-2" data-content="OR CONNECT WITH">
+                          <!-- <hr class="my-3 hr-text letter-spacing-2" data-content="OR CONNECT WITH"> -->
                           
-                        <div class="text-center">
+                        <!-- <div class="text-center">
                             <button class="btn letter-spacing-0 btn-outline-color m-1 tamBotaoRedes" data-toggle="tooltip" title="" data-original-title="Connect with Facebook" aria-describedby="tooltip514010"><i id="facebook" class="fa fa-facebook" aria-hidden="true"></i><span class="sr-only">Connect with Facebook</span></button>
                             <button class="btn letter-spacing-0 btn-outline-color tamBotaoRedes" data-toggle="tooltip" title="" data-original-title="Connect with Google"><i id="google" class="fa fa-google" aria-hidden="true"></i><span class="sr-only">Connect with Google                                      </span></button>
-                          </div>
+                          </div> -->
                         </div>
                       </div>
                     

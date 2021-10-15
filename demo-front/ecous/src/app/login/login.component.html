@@ -18,16 +18,18 @@
                   <input [(ngModel)]="userLogin.email" class="form-control" id="registerEmail" type="text">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="registerPassword">Password</label>
+                  <label class="form-label" for="registerPassword">Senha</label>
                   <input [(ngModel)]="userLogin.senha" class="form-control" id="registerPassword" type="password">
                 </div>
 
                 <div class="form-group text-center">
-                  <button (click)='entrar()' class="btn btn-block btn-outline-dark mt-4" type="submit"><i class="fa fa-user-o"
-                      aria-hidden="true"></i> Login</button>
+                  <button (click)='entrar()' class="btn btn-block btn-outline-dark mt-4" type="submit"><i
+                      class="fa fa-sign-in" aria-hidden="true"></i>
+                    Login</button>
                 </div>
 
                 <div class="form-group text-center">
-                  <a class="btn btn-block btn-outline-dark mt-4" routerLink='/register'><i class="fa fa-user-o"
-                    aria-hidden="true"></i> Cadastro</a>
+                  <a class="btn btn-block btn-outline-dark mt-4" routerLink='/register'><i class="fa fa-user-plus"
+                      aria-hidden="true"></i>
+                    Cadastro</a>
                 </div>
