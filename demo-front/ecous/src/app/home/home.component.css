@@ -14,33 +14,90 @@ textarea{
 .card-left,
 .card-right{
     cursor: pointer;
-    transition: 300ms ease-in-out;
+    transition: 900ms;
 }
 
 .card-left:hover{
     opacity: .8;
 }
 
-h2:hover{
-    color: black;
+.card-right:hover{
+    opacity: .8;
 }
 
-img:hover{
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    cursor: pointer;
+
+h2:hover{
+    color: black;
 }
 
 .card{
     border: none;
 }
 
-.card-right:hover{
-    opacity: .8;
+.text-lanc h2, .text-kit h2 {
+    font-size: 3.2rem;
+    
 }
 
-.card-body p{
+img.card-img{
+    width: 100%; 
+    height: 60vh;
+   
+}
+
+button {
+    width: 7rem;
+    background-color: #BCAD76;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.533ms ease-in-out;
+}
+
+button:hover{
+    background-color: #fff;
+    color:  #BCAD76;
+    border: 1px solid #BCAD76;
+}
+
+.fa{
+    font-size: 2.2rem;
+    color: #E9ECEF;
+}
+
+.destaques p{
+    font-size: 1.4rem;
     font-weight: 600;
-    text-align:left;
+}
+
+ .produtoCarousel, .img-right, .img-left{
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.title-jum{
+    font-weight: 400;
+    font-size: 2.2rem;
+}
+
+h3{
+    margin-top: .4rem;
+    font-size: 1.1rem;
+    opacity: .7;
+}
+
+.descricao{
+    opacity: .6;
+}
+
+@media only screen  and (max-width:600px){
+
+    .card{
+        width: 100%;
+    }
+
+    img.card-img{
+        width: 90vw;
+        height: 60vh;
+    }
+
 }
