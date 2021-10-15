@@ -12,8 +12,6 @@
 <img src="https://i.imgur.com/kHGDwoc.jpg" style="width: 65%;">
 </p>
 
-
-
 ## 👀Preview:
 
 - ###   <a href="https://drive.google.com/file/d/14EJ8_X7hctSv70RYg18UfN5DTdiifHf5/view">Wireframe</a>
