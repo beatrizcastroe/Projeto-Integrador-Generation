@@ -34,7 +34,7 @@ textarea{
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: .2rem;
 }
 
 .h6 {
@@ -86,6 +86,9 @@ body {
     color: #212529;
     text-align: left;
     background-color: #fff;
+}
+.text-body{
+    font-size: 1.1rem;
 }
 
 @media only screen  and (max-width:600px){
