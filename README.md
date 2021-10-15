@@ -8,9 +8,9 @@
 
 <p align="center">  </p>
 
-
-
-
+<p align="center">
+<img src="https://i.imgur.com/kHGDwoc.jpg" style="width: 65%;">
+</p>
 
 ## 👀Preview:
 
