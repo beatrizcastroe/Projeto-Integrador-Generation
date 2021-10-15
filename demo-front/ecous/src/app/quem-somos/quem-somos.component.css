@@ -88,3 +88,12 @@ body {
     background-color: #fff;
 }
 
+@media only screen  and (max-width:600px){
+img {
+    margin-bottom: 1.5rem;
+
+}
+h2{
+    margin-top: 1.5rem;
+}
+}
