@@ -5,19 +5,42 @@
     <h1 class="hero-heading mt-4">Seu perfil</h1>
     <div>
       <p class="lead text-muted mt-1">Mantenha sempre seu perfil atualizado, inclusive seu endereço para que a entrega
-        ocorra corretamente</p>
+        ocorra corretamente.</p>
     </div>
   </div>
 
   <section class="pb-6">
     <div class="container">
       <div class="row">
+        <!-- Customer Sidebar-->
+        <div class="col-xl-3 col-lg-4 mb-5">
+          <div class="customer-sidebar card border-0">
+            <div class="customer-profile"><a class="d-inline-block" href="#"><img
+                  class="img-fluid rounded-circle customer-image" src="{{usuarioLogin.foto}}" alt=""></a>
+              <h5>{{usuarioLogin.nome}}</h5>
+            </div>
+            <div class="nav flex-column nav-pills list-group " id="v-pills-tab" role="tablist"
+              aria-orientation="vertical">
+              <a class="list-group-item active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa fa-user-o"
+                  aria-hidden="true"></i>
+                Perfil</a>
+              <a class="list-group-item" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+                role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-heart-o"
+                  aria-hidden="true"></i>
+                Lista de Desejos</a>
+            </div>
+            <a routerLink='/home' class="list-group-item" aria-controls="v-pills-settings" aria-selected="false"> <i
+                class="fa fa-sign-out" aria-hidden="true"></i>Sair</a>
+          </div>
+        </div>
+        <!-- /Customer Sidebar-->
         <div class="col-lg-8 col-xl-9 mb-5 mb-lg-0">
           <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel"
               aria-labelledby="v-pills-profile-tab">
               <div class="mb-5">
-                <h3 class="mb-5 mt-5">Atualizar</h3>
+                <h3 class="mb-5 mt-5">Informações Pessoais</h3>
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
@@ -25,15 +48,21 @@
                       <input [(ngModel)]="usuarioLogin.nome" class="form-control" id="password_old" type="text">
                     </div>
                   </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="form-label" for="password_old">Foto</label>
+                      <input [(ngModel)]="usuarioLogin.foto" class="form-control" id="password_old" type="text">
+                    </div>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-sm-6">
+                  <!-- <div class="col-sm-6">
                     <div class="form-group">
                       <label class="form-label" for="password_1">Email</label>
                       <input [(ngModel)]="usuarioLogin.email" class="form-control" id="password_1" type="text">
                     </div>
-                  </div>
-                  <div class="col-sm-6">
+                  </div> -->
+                  <!-- <div class="col-sm-6">
                     <div class="form-group">
                       <label class="form-label" for="password_2">Senha</label>
                       <input (input)='confirmSenha($event)' class="form-control" id="password_2" type="text">
@@ -44,7 +73,7 @@
                       <label class="form-label" for="password_2">Confirmar senha</label>
                       <input [(ngModel)]="usuarioLogin.senha" class="form-control" id="password_2" type="password">
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <!--<div class="mt-4">
                 <button class="btn btn-dark" type="submit"><i class="fa fa-save mr-2"></i>Change password</button>
@@ -73,7 +102,6 @@
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
-
                       <label class="form-label" for="cep">CEP</label>
                       <input [(ngModel)]="usuarioLogin.cep" class="form-control tamcep" id="cep" name="cep" ngModel
                         #cep="ngModel" (blur)="consultaCep(cep.value , f)">
@@ -145,8 +173,11 @@
 
               <!-- /.row-->
               <div class="mb-5 mt-3">
-                <button (click)='cadastrarEndereco()' class="btn btn-dark" type="submit"><i
-                    class="fa fa-save mr-2 "></i>Save changes</button>
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+                  <i class="fa fa-save mr-2 "></i>Atualizar
+                </button>
+                <!-- <button (click)='atualizarUser()' class="btn btn-dark" type="submit"><i
+                    class="fa fa-save mr-2 "></i>Atualizar</button> -->
               </div>
             </div>
             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
@@ -179,11 +210,13 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-4 d-none d-md-block text-center"> <a (click)='adicionaItemCarrinho(item.idProduto, idPedido)' class="mt-4 mt-md-0 text-primary"
-                          >
+                      <div class="col-md-4 d-none d-md-block text-center"> <a
+                          (click)='adicionaItemCarrinho(item.idProduto, idPedido)' class="mt-4 mt-md-0 text-primary">
                           <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                       </div>
-                      <div class="col-1 d-none d-md-block text-center"><a (click)='removerDaListaDeDesejos(item.idProduto, idListaDeDesejos)' class="cart-remove text-muted">
+                      <div class="col-1 d-none d-md-block text-center"><a
+                          (click)='removerDaListaDeDesejos(item.idProduto, idListaDeDesejos)'
+                          class="cart-remove text-muted">
                           <i class="fa fa-times" aria-hidden="true"></i>
                         </a></div>
                     </div>
@@ -191,30 +224,10 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...
-            </div>
           </div>
 
         </div>
-        <!-- Customer Sidebar-->
-        <div class="col-xl-3 col-lg-4 mb-5">
-          <div class="customer-sidebar card border-0">
-            <div class="customer-profile"><a class="d-inline-block" href="#"><img
-                  class="img-fluid rounded-circle customer-image" src="" alt=""></a>
-              <h5>{{usuarioLogin.nome}}</h5>
-              <p class="text-muted text-sm mb-0">Los Angeles, CA</p>
-            </div>
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link  active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                aria-controls="v-pills-profile" aria-selected="false">Perfil</a>
-              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-                aria-controls="v-pills-messages" aria-selected="false">Lista de Desejos</a>
-              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-                aria-controls="v-pills-settings" aria-selected="false">Configurações</a>
-            </div>
-          </div>
-        </div>
-        <!-- /Customer Sidebar-->
+        
       </div>
     </div>
   </section>
@@ -259,3 +272,37 @@
   </div>
 
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"> -->
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirme a senha para atualizar as informações desejadas.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="form-label" for="password_2">Senha</label>
+                      <input (input)='confirmSenha($event)' class="form-control" id="password_2" type="text">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label class="form-label" for="password_2">Confirmar senha</label>
+                      <input [(ngModel)]="usuarioLogin.senha" class="form-control" id="password_2" type="password">
+                    </div>
+                  </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button (click)='atualizarUser()' type="button" data-dismiss="modal" class="btn btn-success">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
