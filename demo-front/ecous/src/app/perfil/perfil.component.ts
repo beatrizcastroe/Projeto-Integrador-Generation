@@ -72,6 +72,10 @@ export class PerfilComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
 
+    // if (environment.token == ''){
+    //   this.router.navigate(['/login'])
+    // }
+
     let id = environment.idUsuario
     this.findByIdUsuario(id)
     this.findByIdUsuarioLogin(id)
@@ -275,7 +279,7 @@ export class PerfilComponent implements OnInit {
 
   }
 
-  cadastrarEndereco() {
+  atualizarUser() {
    
  
       //this.usuarioLogin.listaDeDesejos = new ListaDeDesejos
@@ -284,8 +288,8 @@ export class PerfilComponent implements OnInit {
       console.log("confirmarSenha"+ this.confirmarSenha)
       this.authService.atualizar(this.usuarioLogin).subscribe((resp: UsuarioLogin) =>{
         this.usuarioLogin = resp 
-        //this.router.navigate(['/perfil/:id'])
-        alert('Endereço atualizado com sucesso')
+        this.router.navigate(['/perfil'])
+        alert('Perfil atualizado com sucesso')
       })
 
     }
