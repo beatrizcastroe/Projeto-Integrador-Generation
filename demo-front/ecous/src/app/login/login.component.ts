@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       /* ARMAZENA O TOKEN DO USUARIO NO LOCAL STORAGE */
       localStorage.setItem('token', this.tokenUsuario);
 
-      this.router.navigate(['/home'])
+      this.router.navigate(['/perfil'])
     }, erro =>{
       if(erro.status == 400){
         alert('Usuário e/ou senha incorretos.')
