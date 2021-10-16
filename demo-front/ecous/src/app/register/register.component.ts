@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService,
   ) { }
 
   ngOnInit() {
@@ -31,13 +33,13 @@ export class RegisterComponent implements OnInit {
     console.log("confirmarSenha"+ this.confirmarSenha)
  
     if (this.user.senha != this.confirmarSenha) {
-      alert('As senhas estão incorretas.')
+      this.alertas.showAlertDanger ('As senhas estão incorretas.')
     }
     else {
       this.authService.cadastrar(this.user).subscribe((resp: Usuario) =>{
         this.user = resp 
         this.router.navigate(['/login'])
-        alert('Usuário cadastrado com sucesso')
+        this.alertas.showAlertSuccess('Usuário cadastrado com sucesso')
       })
 
     }

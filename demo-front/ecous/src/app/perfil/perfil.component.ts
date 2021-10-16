@@ -6,6 +6,7 @@ import { Pedido } from '../model/Pedido';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CepService } from '../service/cep.service';
 import { ClienteService } from '../service/cliente.service';
@@ -64,6 +65,7 @@ export class PerfilComponent implements OnInit {
     private authService: AuthService,
     private produtoService: ProdutoService,
     private route: ActivatedRoute,
+    private alertas: AlertasService,
 
      /* DADOS CARRINHO USUARIO */
      private pedidoService: PedidoService
@@ -155,7 +157,7 @@ export class PerfilComponent implements OnInit {
 
   removerDaListaDeDesejos(idProduto: number, idLista: number) {
     this.listaDeDesejosService.removerItemListaDeDesejos(idProduto, idLista).subscribe(() => {
-      alert('Item removido da lista de desejos');
+      this.alertas.showAlertSuccess('Item removido da lista de desejos');
 
       this.findByIdPedido();
       this.findByIdListaDeDesejos();
@@ -169,7 +171,7 @@ export class PerfilComponent implements OnInit {
     this.produtoService.adicionaItemCarrinho(idProduto, idCarrinho).subscribe(() => {
       /* DADOS CARRINHO USUARIO */
       this.findByIdProdutosCarrinho();
-      alert('Item adicionado ao carrinho');
+      this.alertas.showAlertSuccess('Item adicionado ao carrinho');
 
     })
 
@@ -257,7 +259,7 @@ export class PerfilComponent implements OnInit {
 
   removerDoCarrinho(idProduto: number, idPedido: number) {
     this.pedidoService.removerItemDoCarrinho(idProduto, idPedido).subscribe(() => {
-      alert('Item removido do carrinho!');
+      this.alertas.showAlertSuccess('Item removido do carrinho!');
 
       this.findByIdProdutosCarrinho();
       this.findByIdPedido();
@@ -271,7 +273,7 @@ export class PerfilComponent implements OnInit {
     this.pedidoService.postPedido(this.pedido).subscribe((resp: Pedido) => {
       this.pedido = resp;
 
-      alert('Pedido cadastrado com sucesso');
+      this.alertas.showAlertSuccess('Pedido cadastrado com sucesso');
 
       this.router.navigate(['/pedido']);
 
@@ -289,7 +291,7 @@ export class PerfilComponent implements OnInit {
       this.authService.atualizar(this.usuarioLogin).subscribe((resp: UsuarioLogin) =>{
         this.usuarioLogin = resp 
         this.router.navigate(['/perfil'])
-        alert('Perfil atualizado com sucesso')
+        this.alertas.showAlertSuccess('Perfil atualizado com sucesso')
       })
 
     }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-contato',
@@ -19,7 +20,9 @@ export class ContatoComponent implements OnInit {
   validCaracter: boolean = false;
   validCaracterEmail:boolean = false;
 
-  constructor() { }
+  constructor(
+    private alertas: AlertasService
+  ) { }
 
   ngOnInit() {
 
@@ -79,9 +82,9 @@ export class ContatoComponent implements OnInit {
 
   enviar(event: any) {
     if(this.validNome == true && this.validMensagem == true && this.validSobrenome == true && this.validEmail == true){
-      alert('Formulário enviado com sucesso!')
+      this.alertas.showAlertSuccess('Formulário enviado com sucesso!')
   }else{
-      alert('Por favor, preencha todos os dados corretamente.')
+    this.alertas.showAlertDanger('Por favor, preencha todos os dados corretamente.')
   }
   }
 }

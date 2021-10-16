@@ -23,6 +23,8 @@ import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.compo
 import { LoginBackendComponent } from './login-backend/login-backend.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PedidoComponent } from './pedido/pedido.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -48,13 +50,15 @@ import { PedidoComponent } from './pedido/pedido.component';
     LoginBackendComponent,
     PerfilComponent,
     PedidoComponent,
+    AlertasComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

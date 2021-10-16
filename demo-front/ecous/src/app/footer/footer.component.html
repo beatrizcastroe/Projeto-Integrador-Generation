@@ -4,18 +4,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 pr-lg-5 pr-xl-6 mb-5 mb-lg-0">
-                    <h6>Entre em contato via e-mail:</h6>
+                    <h6>Cadastre-se em nossa newsletter.</h6>
                     <p class="text-sm mb-3">Outro viver, é possível.</p>
+                    <div class="form-group">
                     <form action="#" id="newsletter-form">
                         <div class="input-group input-group-underlined mb-3">
-                            <input class="form-control form-control-underlined" type="email" placeholder="Seu endereço de e-mail :)" aria-label="Seu endereço de e-mail :)">
+                            <input class="form-control form-control-underlined" type="email" placeholder="Seu endereço de e-mail :)" aria-label="Seu endereço de e-mail :)" id="newsEmail" required="required" (input)="getNewsEmail($event)"> 
                             <div class="input-group-append ml-0">
-                                <button class="btn btn-underlined tex-gray-700 py-0" type="button">
-                                    <a class="text-reset text-hover-primary"  routerLink='/contato' ><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                                <button class="btn btn-underlined tex-gray-700 py-0" type="button submit" (click)="enviar($event)">
+                                    <a class="text-reset text-hover-primary"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                                 </button>
+                                <div *ngIf="!validEmailNews"><br><span class="validacao"></span></div>
                             </div>
                         </div>
                     </form>
+                </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="row">

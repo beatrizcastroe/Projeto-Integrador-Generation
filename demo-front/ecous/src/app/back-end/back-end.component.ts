@@ -7,6 +7,7 @@ import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-back-end',
@@ -32,7 +33,8 @@ export class BackEndComponent implements OnInit {
     private router: Router, 
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -85,7 +87,7 @@ export class BackEndComponent implements OnInit {
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert('Produto cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
       this.produto = new Produto
       this.getAllProdutos()
     })
@@ -94,7 +96,7 @@ export class BackEndComponent implements OnInit {
   cadastrarCat(){
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria = resp
-      alert('Categoria cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Categoria cadastrado com sucesso!')
       this.getAllCategorias()
       this.categoria = new Categoria()
     })
@@ -108,13 +110,13 @@ export class BackEndComponent implements OnInit {
     console.log("confirmarSenha"+ this.confirmarSenha)
  
     if (this.user.senha != this.confirmarSenha) {
-      alert('As senhas estão incorretas.')
+      this.alertas.showAlertDanger('As senhas estão incorretas.')
     }
     else {
       this.authService.cadastrar(this.user).subscribe((resp: Usuario) =>{
         this.user = resp 
         this.router.navigate(['/backend'])
-        alert('Usuário cadastrado com sucesso')
+        this.alertas.showAlertSuccess('Usuário cadastrado com sucesso')
         this.getAllUsuarios()
       })
 
