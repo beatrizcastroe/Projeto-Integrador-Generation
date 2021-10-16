@@ -1,97 +1,126 @@
 <footer class="page-footer font-small bg-sucess">
-    <hr>
-    <div class="py-6 text-muted">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 pr-lg-5 pr-xl-6 mb-5 mb-lg-0">
-                    <h6>Cadastre-se em nossa newsletter.</h6>
-                    <p class="text-sm mb-3">Outro viver, é possível.</p>
-                    <div class="form-group">
-                    <form action="#" id="newsletter-form">
-                        <div class="input-group input-group-underlined mb-3">
-                            <input class="form-control form-control-underlined" type="email" placeholder="Seu endereço de e-mail :)" aria-label="Seu endereço de e-mail :)" id="newsEmail" required="required" (input)="getNewsEmail($event)"> 
-                            <div class="input-group-append ml-0">
-                                <button class="btn btn-underlined tex-gray-700 py-0" type="button submit" (click)="enviar($event)">
-                                    <a class="text-reset text-hover-primary"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                                </button>
-                                <div *ngIf="!validEmailNews"><br><span class="validacao"></span></div>
-                            </div>
-                        </div>
-                    </form>
+  <hr>
+  <div class="py-6 text-muted">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 pr-lg-5 pr-xl-6 mb-5 mb-lg-0">
+          <h6>Cadastre-se em nossa newsletter.</h6>
+          <p class="text-sm mb-3">Outro viver é possível.</p>
+          <div class="form-group">
+            <form action="#" id="newsletter-form">
+              <div class="input-group input-group-underlined mb-3">
+                <input class="form-control form-control-underlined" type="email" placeholder="Seu endereço de e-mail :)"
+                  aria-label="Seu endereço de e-mail :)" id="newsEmail" required="required"
+                  (input)="getNewsEmail($event)">
+                <div class="input-group-append ml-0">
+                  <button class="btn btn-underlined tex-gray-700 py-0" type="button submit" (click)="enviar($event)">
+                    <a class="text-reset text-hover-primary"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                  </button>
+                  <div *ngIf="!validEmailNews"><br><span class="validacao"></span></div>
                 </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <a class="d-lg-nome block-toggler my-3" data-toggle="collapse" aria-expanded="true" style="text-decoration:none">
-                                <span class="block-toggler-icon"></span>
-                                <h6 class="text-dark letter-spacing-1 mb-4 d-done d-lg-block">Ecous</h6>
-                            </a>
-                            <div class="expand-lg collapse show" id="footerMenu0" style>
-                               <ul class="list-unstyled text-sm pt-2 pt-lg-0">
-                                   <li class="mb-2">
-                                       <a class="text-muted text-hover-dark link-animated" routerLink='/quemsomos'>
-                                           Quem Somos
-                                       </a>
-                                   </li>
-                                   <li class="mb-2">
-                                    <a class="text-muted text-hover-dark link-animated" routerLink='/produtos'>
-                                        Loja 
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a class="text-muted text-hover-dark link-animated" href="#">
-                                        Cashback
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a class="text-muted text-hover-dark link-animated" routerLink='/contato'>
-                                        Contato    
-                                    </a>
-                                 </li>
-                               </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <a class= "d-lg-nome block-toggler my-3" data-toggle="collapse" aria-expanded="true" style="text-decoration:none">
-                                <span class="block-toggler-icon"></span>
-                                <h6 class="text-dark letter-spacing-1 mb-4 d-done d-lg-block">Sua Conta</h6>
-                            </a>
-                            <div class="expand-lg collapse show" id="footerMenu0" style>
-                               <ul class="list-unstyled text-sm pt-2 pt-lg-0">
-                                   <li class="mb-2">
-                                       <a class="text-muted text-hover-dark link-animated" routerLink='/perfil'>
-                                           Seu Perfil
-                                       </a>
-                                   </li>
-                                   <li class="mb-2">
-                                    <a class="text-muted text-hover-dark link-animated" routerLink='/login'>
-                                        Login
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a class="text-muted text-hover-dark link-animated" href="#">
-                                        Lista de desejos 
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a class="text-muted text-hover-dark link-animated" routerLink='/pedido'>
-                                        Seu carrinho 
-                                    </a>
-                               </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              </div>
+            </form>
+          </div>
         </div>
+        <div class="col-lg-7">
+          <div class="row">
+            <div class="col-lg-4">
+              <a class="d-lg-nome block-toggler my-3" data-toggle="collapse" aria-expanded="true"
+                style="text-decoration:none">
+                <span class="block-toggler-icon"></span>
+                <h6 class="text-dark letter-spacing-1 mb-4 d-done d-lg-block">Ecous</h6>
+              </a>
+              <div class="expand-lg collapse show" id="footerMenu0" style>
+                <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                  <li class="mb-2">
+                    <a class="text-muted text-hover-dark link-animated" routerLink='/quemsomos'>
+                      Quem Somos
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-muted text-hover-dark link-animated" routerLink='/produtos'>
+                      Loja
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-muted text-hover-dark link-animated" data-toggle="modal" data-target="#ModalLongoExemplo">
+                      Cashback
+                    </a>
+                    <!-- Botão para acionar modal -->
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLongoExemplo">
+                      Abrir modal de demonstração
+                    </button> -->
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog"
+                      aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="TituloModalLongoExemplo">Título do modal</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Corpo do modal
+                          </div>
+                          <div class="modal-footer">
+                            <button ctype="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn botaozinho">Salvar mudanças</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Fim do modal-->
+
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-muted text-hover-dark link-animated" routerLink='/contato'>
+                      Contato
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <a class="d-lg-nome block-toggler my-3" data-toggle="collapse" aria-expanded="true"
+                style="text-decoration:none">
+                <span class="block-toggler-icon"></span>
+                <h6 class="text-dark letter-spacing-1 mb-4 d-done d-lg-block">Sua Conta</h6>
+              </a>
+              <div class="expand-lg collapse show" id="footerMenu0" style>
+                <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                  <li class="mb-2">
+                    <a class="text-muted text-hover-dark link-animated" routerLink='/perfil'>
+                      Seu Perfil
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-muted text-hover-dark link-animated" routerLink='/login'>
+                      Login
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-muted text-hover-dark link-animated" href="">
+                      Lista de desejos
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-muted text-hover-dark link-animated" routerLink='/pedido'>
+                      Seu carrinho
+                    </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="footer-copyright bg-light text-center py-3">
-        <span class="text-dark">© 2021 Copyright: Ecous </span>
-    </div>
-
-
-
+  <div class="footer-copyright bg-light text-center py-3">
+    <span class="text-dark">© 2021 Copyright: Ecous </span>
+  </div>
 
 </footer>
