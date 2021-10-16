@@ -57,3 +57,14 @@ body {
     color: #adb5bd;
     font-size: .875rem;
 }
+
+.form-control {
+    padding-left: 0;
+    transition: all .5s;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background-color: transparent;
+    color:#bcac76
+    
+}

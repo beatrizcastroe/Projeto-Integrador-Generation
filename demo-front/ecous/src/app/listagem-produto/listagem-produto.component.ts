@@ -15,7 +15,9 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./listagem-produto.component.css']
 })
 export class ListagemProdutoComponent implements OnInit {
+  
   listaProdutos: Produto []
+  pesquisaProd: string
   produto: Produto = new Produto()
 
   categoria: Categoria = new Categoria()
@@ -83,4 +85,16 @@ export class ListagemProdutoComponent implements OnInit {
       this.categoria = resp
     })
   }
+
+  findByNomeProdutos(){
+
+    if(this.pesquisaProd == ''){
+      this.getAllProdutos()
+    }else{
+      this.produtoService.getAllByNomeProdutos(this.pesquisaProd).subscribe((resp : Produto[])=>{
+        this.listaProdutos = resp
+      })
+    }
+  } 
+
 }
