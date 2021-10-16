@@ -11,7 +11,6 @@ import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { BackEndComponent } from './back-end/back-end.component';
-import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
@@ -38,7 +37,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MenuComponent,
     RegisterComponent,
     BackEndComponent,
-    CategoriaComponent,
     CategoriaDeleteComponent,
     ProdutoDeleteComponent,
     CategoriaEditComponent,
