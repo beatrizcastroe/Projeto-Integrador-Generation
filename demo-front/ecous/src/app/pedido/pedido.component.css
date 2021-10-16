@@ -126,3 +126,15 @@ b, strong {
 .text-left {
   text-align: left !important;
 }
+
+.btn-dark:hover {
+  color: #fff;
+  background-color: #101214;
+  border-color: #0a0c0d;
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
+}

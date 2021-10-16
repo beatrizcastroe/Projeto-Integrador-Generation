@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'quemsomos', component: QuemSomosComponent},
   {path: 'contato',component:ContatoComponent},
   {path: 'produtos', component: ListagemProdutoComponent},
-  {path: 'produto/:id', component: DetalheProdutoComponent},
+  {path: 'produto/:idProdutoR', component: DetalheProdutoComponent},
   {path: 'login-backend', component: LoginBackendComponent},
   {path: 'perfil', component: PerfilComponent},
   {path: 'pedido', component: PedidoComponent}

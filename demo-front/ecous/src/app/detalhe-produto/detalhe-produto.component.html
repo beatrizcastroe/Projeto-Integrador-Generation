@@ -1,48 +1,84 @@
 <div class="container">
-    <div class="row pt-5 d-flex justify-content-start">
-        <div class="col-md-6 ">
-            <div class="">
-                <img class="card-img"
-                src="{{produto.foto}}"
-                alt="Imagem do card">
-            </div>
-            
-        </div>
-        <div class="col-md-6">
-            <div class="sticky-top" style="top: 100px;">
-                <h1 class="mb-4">{{produto.nome}}</h1>
-                <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
-                  <ul class="list-inline mb-2 mb-sm-0">
-                    <li class="list-inline-item h4 font-weight-light mb-0">R$ {{produto.preco}}</li>
-                  </ul>
-                </div>
-                <p class="mb-4 text-muted">{{produto.descricao}}</p>
-                <form id="buyForm" action="#">
-                  <div class="row">
-                    <div class="col-sm-6 col-lg-12 detail-option mb-4">
-                      <h6 class="detail-option-heading">Marca: {{produto.marca}}</h6>
-                    </div>
-                  </div>
-                  <div class="input-group w-100 mb-4">
-                    <input class="form-control form-control-lg detail-quantity" name="items" type="number" value="1">
-                    <div class="input-group-append flex-grow-1">
-                      <button class="btn btn-dark btn-block" type="submit"> <i class="fa fa-shopping-cart mr-2"></i>Add carrinho</button>
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <div class="col-6"><a (click)='adicionaItemListaDeDesejos(produto.idProduto, idListaDeDesejos)'> <i class="fa fa-heart mr-2"></i>Add lista de desejo </a></div>
-                    <div class="col-6 text-right">
-                      <ul class="list-inline mb-0">
-                        <li class="list-inline-item mr-2"><a class="text-dark text-hover-primary" href="#"><i class="fa fa-facebook-f"> </i></a></li>
-                        <li class="list-inline-item"><a class="text-dark text-hover-primary" href="#"><i class="fa fa-pinterest-p"> </i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <ul class="list-unstyled">
-                    <li><strong>Categorias: </strong> <a class="text-muted" href="#">{{produto.categoriaRelacionada.nomeCategoria}}, {{produto.categoriaRelacionada.nomeSubcategoria}}</a></li>
-                  </ul>
-                </form>
-              </div>
-        </div>
+  <div class="row pt-5 d-flex justify-content-start">
+    <div class="col-md-6 ">
+      <div class="">
+        <img class="card-img" src="{{produto.foto}}" alt="Imagem do card">
+      </div>
+
     </div>
+    <div class="col-md-6">
+      <div class="sticky-top" style="top: 100px;">
+        <h1 class="mb-4">{{produto.nome}}</h1>
+        <h6 class="detail-option-heading">Ainda restam {{produto.estoque}} produtos ;)</h6>
+        <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
+          <ul class="list-inline mb-2 mb-sm-0">
+            <li class="list-inline-item h4 font-weight-light mb-0">R$ {{produto.preco}}</li>
+          </ul>
+        </div>
+        <p class="mb-4 text-muted">{{produto.descricao}}</p>
+        <form id="buyForm" action="#">
+          <div class="row">
+            <div class="col-sm-6 col-lg-12 detail-option mb-4">
+              <h6 class="detail-option-heading">Marca: {{produto.marca}}</h6>
+            </div>
+          </div>
+          <div class="input-group w-100 mb-4">
+            <div class="input-group-append flex-grow-1">
+              <button *ngIf='token != "" ' (click)='adicionaItemCarrinho(produto.idProduto, idPedido)' class="btn btn-dark btn-block" type="submit"> <i class="fa fa-shopping-cart mr-2"></i>Add
+                carrinho</button>
+                <button *ngIf='token == ""' data-toggle="modal" data-target="#modalExemplo" class="btn btn-dark btn-block" type="submit"> <i class="fa fa-shopping-cart mr-2"></i>Add
+                  carrinho</button>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-6" *ngIf='token != "" '><a (click)='adicionaItemListaDeDesejos(produto.idProduto, idListaDeDesejos)'> <i
+                  class="fa fa-heart mr-2"></i>Add lista de desejo </a></div>
+            <div class="col-6 listadesejo" *ngIf='token == ""' data-toggle="modal" data-target="#modalExemplo"><a> <i
+                  class="fa fa-heart mr-2"></i>Add lista de desejo </a></div>
+            <div class="col-6 text-right">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-2"><a class="text-dark text-hover-primary" href="#"><i
+                      class="fa fa-facebook-f"> </i></a></li>
+                <li class="list-inline-item"><a class="text-dark text-hover-primary" href="#"><i
+                      class="fa fa-pinterest-p"> </i></a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="list-unstyled">
+            <li><strong>Categorias: </strong> <a class="text-muted"
+                href="#">{{produto.categoriaRelacionada.nomeCategoria}},
+                {{produto.categoriaRelacionada.nomeSubcategoria}}</a></li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Login -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Faça o login para add o produto na sua Lista de Desejos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="registerEmail">Email</label>
+          <input [(ngModel)]="userLogin.email" class="form-control" id="registerEmail" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="registerPassword">Senha</label>
+          <input [(ngModel)]="userLogin.senha" class="form-control" id="registerPassword" type="password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button (click)='entrar()' type="button" class="btn btn-primary" data-dismiss="modal" >Entrar</button>
+      </div>
+    </div>
+  </div>
 </div>
