@@ -24,6 +24,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { PagamentoComponent } from './pagamento/pagamento.component';
 
 
 
@@ -49,6 +50,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PerfilComponent,
     PedidoComponent,
     AlertasComponent,
+    PagamentoComponent,
 
   ],
   imports: [

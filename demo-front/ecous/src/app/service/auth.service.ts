@@ -61,7 +61,7 @@ export class AuthService {
 
   fomenu(){
     let ok = false
-    if(this.router.url.includes('/home') || this.router.url.includes('/contato') || this.router.url.includes('/quemsomos') || this.router.url.includes('/produtos') || this.router.url.includes('/produto/')|| this.router.url.includes('/perfil') || this.router.url.includes('/pedido')){
+    if(this.router.url.includes('/home') || this.router.url.includes('/contato') || this.router.url.includes('/quemsomos') || this.router.url.includes('/produtos') || this.router.url.includes('/produto/')|| this.router.url.includes('/perfil') || this.router.url.includes('/pedido') || this.router.url.includes('/pagamento')){
       ok = true
     }
     return ok

@@ -36,7 +36,7 @@ export class PedidoComponent implements OnInit {
     private pedidoService: PedidoService,
     private router: Router,
     private route: ActivatedRoute,
-    private alertas: AlertasService,
+    private alertas: AlertasService
 
 
   ) { }

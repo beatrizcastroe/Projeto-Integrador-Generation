@@ -1,0 +1,132 @@
+<!-- Cabeçalho-->
+<section class="hero mt-2">
+    <div class="container">
+        <!--Cabeçalho--->
+        <div class="hero-content">
+            <h1 class="hero-heading">Pagamento</h1>
+            <div>
+                <p class="lead text-muted">You have items in your cart.</p>
+                <p class="lead text-muted">For the checkout, you can use either a multiple pages checkout or have
+                    everything on
+                    a <a href="checkout.html">single page</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pagamento-->
+<section>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 pr-xl-5">
+                <div class="cart mb-5">
+                    <div class="cart-body">
+                        <!-- Métodos de Pagamento-->
+                        <div id="accordion">
+                            <div class="card border-0 shadow mb-3">
+                              <div class="card-header bgf" id="headingOne">
+                                <h5 class="mb-0">
+                                  <button class="btn bgf" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Cartão de Crédito
+                                  </button>
+                                </h5>
+                              </div>
+                          
+                              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <form action="#">
+                                        <div class="row">
+                                          <div class="form-group col-md-6">
+                                            <label class="form-label" for="card-name">Nome do Titular</label>
+                                            <input class="form-control" type="text" name="card-name" placeholder="Nome do Titular" id="card-name">
+                                          </div>
+                                          <div class="form-group col-md-6">
+                                            <label class="form-label" for="card-number">Número do Cartão</label>
+                                            <input class="form-control" type="text" name="card-number" placeholder="Número do Cartão" id="card-number">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label class="form-label" for="expiry-date">Data de Validade</label>
+                                            <input class="form-control" type="text" name="expiry-date" placeholder="MM/AAAA" id="expiry-date">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label class="form-label" for="cvv">Código de Segurança</label>
+                                            <input class="form-control" type="text" name="cvv" placeholder="123" id="cvv">
+                                          </div>
+                                        </div>
+                                      </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card border-0 shadow mb-3">
+                              <div class="card-header bgf" id="headingTwo">
+                                <h5 class="mb-0">
+                                  <button class="btn bgf collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Boleto
+                                  </button>
+                                </h5>
+                              </div>
+                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body py-5">
+                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card border-0 shadow mb-3">
+                              <div class="card-header bgf" id="headingThree">
+                                <h5 class="mb-0">
+                                  <button class="btn bgf collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Pix
+                                  </button>
+                                </h5>
+                              </div>
+                              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Lista de Produtos no Carrinho-->
+
+            <!-- Resumo Pedido-->
+            <div class="col-lg-4">
+                <div class="card mb-5">
+                    <div class="card-header">
+                        <h6 class="mb-0">Resumo do Pedido</h6>
+                    </div>
+                    <div class="card-body py-4">
+                        <p class="text-muted text-sm">Shipping and additional costs are calculated based on values you
+                            have entered.
+                        </p>
+                        <table class="table card-text">
+                            <tr>
+                                <th class="py-4">Impostos</th>
+                                <td class="py-4 text-right text-muted"> $0.00</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4">Frete</th>
+                                <td class="py-4 text-right text-green">GRÁTIS</td>
+                            </tr>
+                            <tr>
+                                <th class="pt-4">Total</th>
+                                <td class="pt-4 text-right h3 font-weight-normal">R${{pedido.valorTotal.toFixed(2)}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                </div>
+                <div class="d-flex justify-content-between flex-column flex-lg-row mb-5 mb-lg-0"><a
+                    class="btn btn-link text-muted mt-2" [routerLink]="['/pedido']"><i
+                        class="fa fa-chevron-left"></i> Voltar </a><a class="btn btn-dark mt-2" href="#"><i
+                        class="fa fa-sync"></i> Finalizar Pedido <i class="fa fa-chevron-right"></i></a>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Pagamento-->

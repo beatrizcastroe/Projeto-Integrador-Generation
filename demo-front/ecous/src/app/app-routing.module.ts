@@ -17,6 +17,7 @@ import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.compo
 import { LoginBackendComponent } from './login-backend/login-backend.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PedidoComponent } from './pedido/pedido.component';
+import { PagamentoComponent } from './pagamento/pagamento.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'produto/:idProdutoR', component: DetalheProdutoComponent},
   {path: 'login-backend', component: LoginBackendComponent},
   {path: 'perfil', component: PerfilComponent},
-  {path: 'pedido', component: PedidoComponent}
+  {path: 'pedido', component: PedidoComponent},
+  {path: 'pagamento', component: PagamentoComponent}
 
 
 ];
