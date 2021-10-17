@@ -7,19 +7,19 @@
           <h6>Cadastre-se em nossa newsletter.</h6>
           <p class="text-sm mb-3">Outro viver é possível.</p>
           <div class="form-group">
-            <form action="#" id="newsletter-form">
-              <div class="input-group input-group-underlined mb-3">
-                <input class="form-control form-control-underlined" type="email" placeholder="Seu endereço de e-mail :)"
-                  aria-label="Seu endereço de e-mail :)" id="newsEmail" required="required"
-                  (input)="getNewsEmail($event)">
-                <div class="input-group-append ml-0">
-                  <button class="btn btn-underlined tex-gray-700 py-0" type="button submit" (click)="enviar($event)">
-                    <a class="text-reset text-hover-primary"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                  </button>
-                  <div *ngIf="!validEmailNews"><br><span class="validacao"></span></div>
-                </div>
+            <label class="form-label" for="emailContact"></label>
+            <div class="input-group input-group-underlined mb-3">
+              <input class="form-control form-control-underlined" type="email" id="email"
+                placeholder="Seu endereço de e-mail :)" aria-label="Seu endereço de e-mail :)" required="required"
+                (input)="getNewsEmail($event)">
+              <div *ngIf="!validEmailNews"><br><span class="validacao"></span></div>
+              <div *ngIf="!validCaracterEmail"><br><span class="validacao"></span></div>
+              <div class="input-group-append ml-0">
+                <button class="btn btn-underlined tex-gray-700 py-0" type="button submit" (click)="enviar($event)">
+                  <a class="text-reset text-hover-primary"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
         <div class="col-lg-7">
@@ -43,8 +43,9 @@
                     </a>
                   </li>
                   <li class="mb-2">
-                    <a class="text-muted text-hover-dark link-animated" data-toggle="modal" data-target="#ModalLongoExemplo">
-                      Cashback
+                    <a class="text-muted text-hover-dark link-animated" data-toggle="modal"
+                      data-target="#ModalLongoExemplo">
+                      Feedback
                     </a>
                     <!-- Botão para acionar modal -->
                     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLongoExemplo">
@@ -52,22 +53,42 @@
                     </button> -->
 
                     <!-- Modal -->
-                    <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog"
+                    <div class="modal" id="ModalLongoExemplo" tabindex="-1" role="dialog"
                       aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="TituloModalLongoExemplo">Título do modal</h5>
+                            <h5 class="modal-title" id="TituloModalLongoExemplo">Conte-nos como foi a sua experiência:
+                            </h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            Corpo do modal
+                            <form>
+                              <div class="form-group">
+                                <label class="form-label" for="emailContact"></label>
+                                <div class="input-group input-group-underlined mb-3">
+                                  <input class="form-control form-control-underlined" type="email" id="email"
+                                    placeholder="Seu endereço de e-mail :)" aria-label="Seu endereço de e-mail :)"
+                                    required="required" (input)="getNewsEmail($event)">
+                                  <div *ngIf="!validEmailNews"><br><span class="validacao"></span></div>
+                                  <div *ngIf="!validCaracterEmail"><br><span class="validacao"></span></div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="form-label" for="messageContact"></label>
+                                <textarea class="form-control form-control-underlined" placeholder='O que podemos fazer para melhorar..'rows="4" name="messageContact"
+                                  id="message" required="required" (input)="getMensagem($event)"></textarea>
+                                <div *ngIf="!validMensagem"></div>
+                                <div *ngIf="validCaracter"></div>
+
+                              </div>
+                            </form>
                           </div>
                           <div class="modal-footer">
-                            <button ctype="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn botaozinho">Salvar mudanças</button>
+                            <button type="button" class="btn botaozinho" (click)='enviarModal()'
+                              data-dismiss="modal">Enviar</button>
                           </div>
                         </div>
                       </div>
