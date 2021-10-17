@@ -1,42 +1,52 @@
-<div class="container-fluid p-0">
-  <div class="row mr-0 ml-0">
-    <div class="col-md-2 bg p-0">
-      <div class="nav flex-column nav-pills"  style="height: 100vh;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a routerLink='/home' class="nav-link text-white"
-        id="v-pills-settings-tab" data-toggle="pill" role="tab" aria-controls="v-pills-settings"
-        aria-selected="false"><b>eco</b>us</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" routerLink='/home'><strong>eco</strong>us</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="nav nav-pills navbar-nav">
+      <li class="nav-item">
         <a class="nav-link  text-white" id="v-pills-inicio-tab" data-toggle="pill" href="#v-pills-inicio" role="tab"
           aria-controls="v-pills-inicio" aria-selected="true">Início</a>
-        <a class="nav-link  text-white" id="v-pills-produto-tab" data-toggle="pill" href="#v-pills-produto" role="tab"
-          aria-controls="v-pills-produto" aria-selected="false">Produtos</a>
-        <a class="nav-link text-white" id="v-pills-categoria-tab" data-toggle="pill" href="#v-pills-categoria"
-          role="tab" aria-controls="v-pills-categoria" aria-selected="false">Categorias</a>
-        <a class="nav-link text-white" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-usuario" role="tab"
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" id="v-pills-produto-tab" data-toggle="tab" href="#v-pills-produto" role="tab"
+          aria-controls="v-pills-produto" aria-selected="true">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" id="v-pills-categoria-tab" data-toggle="tab" href="#v-pills-categoria" role="tab"
+          aria-controls="v-pills-categoria" aria-selected="false">Categorias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" id="v-pills-usuario-tab" data-toggle="tab" href="#v-pills-usuario" role="tab"
           aria-controls="v-pills-usuario" aria-selected="false">Usuários</a>
-        <!-- <a class="nav-link text-white" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Perfil</a> -->
-        <a routerLink='/login-backend' routerLinkActive="router-link-active" class="nav-link text-white"
-          id="v-pills-settings-tab" data-toggle="pill" role="tab" aria-controls="v-pills-settings"
-          aria-selected="false">Sair</a>
-      </div>
-    </div>
-    <div class="col-md-10 p-0">
+      </li>
+      <li class="nav-item">
+        <a routerLink='/login-backend' class="nav-link text-white" id="v-pills-settings-tab" data-toggle="tab"
+          role="tab" aria-controls="v-pills-settings" aria-selected="false">Sair</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid p-0">
+  <div class="row mr-0 ml-0 content">
+    <div class="col-md-12 p-0">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-inicio" role="tabpanel" aria-labelledby="v-pills-inicio-tab">
-          <div class="container">
-              <h2 class="text-center mt-2">Bem vindos(as) ao sistema de gerenciamento <b>eco</b>us!!</h2>
-              <!-- <div class="img mt-4">
-                <img src="https://i.imgur.com/kHGDwoc.jpg" alt="logo ecous">
-              </div> -->
-            </div>
+          <div class="txt-inicial">
+            <h2 class="text-center mt-2">Sistema de gerenciamento <span class="marca"><b>eco</b>us!!</span></h2>
+          </div>
         </div>
-        <div class="tab-pane fade " id="v-pills-produto" role="tabpanel"
-          aria-labelledby="v-pills-produto-tab">
+        <div class="tab-pane fade show" id="v-pills-produto" role="tabpanel" aria-labelledby="v-pills-produto-tab">
           <div class="container content-top">
             <span>Sistema de Gerenciamento</span>
             <button class="btn btn-top" data-toggle="modal" data-target="#novoProduto">Cadastrar Produto</button>
           </div>
           <table class="table">
-            <thead class="thead text-white">
+            <thead class="thead text-white w-100">
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Produto</th>
@@ -52,7 +62,7 @@
                 <td>{{item.nome}}</td>
                 <td>{{item.categoriaRelacionada.nomeSubcategoria}}</td>
                 <td>{{item.marca}}</td>
-                <td>R$ {{item.preco}}</td>
+                <td>R${{item.preco}}</td>
                 <td class="buttons">
                   <button class="btn btnY mr-2" [routerLink]="['/produto-edit', item.idProduto]">Editar</button>
                   <button class="btn btn-delete" [routerLink]="['/produto-delete', item.idProduto]">Apagar</button>

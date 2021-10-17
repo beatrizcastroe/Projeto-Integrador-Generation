@@ -1,18 +1,32 @@
+
+body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
 textarea{
     resize: none;
 }
 
-.nav{
+.navbar{
     background-color: #BCAD76;
     padding: .8rem;
     height: auto;
 }
 
-
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-    background-color: #BCAD76;
+.col-md-12{
+    height: 100%;
 }
+
+.nav-item{
+    background-color: transparent;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: transparent;
+}
+
 .nav a{
     font-weight: 200;
     font-size: 1.2rem;
@@ -37,10 +51,6 @@ tbody tr:hover{
     background-color: hsla(0, 0%, 90%, 0.712);
 }
 
- .bg{
-    background-color: #BCAD76;
-}
-
 
 /* H2 */
 
@@ -48,19 +58,6 @@ h2{
     font-weight: 300;
 }
 
-
- /* IMG INICIO
-.tab-pane .container .img{
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-img{
-    width: 70%;
-    height: 70vh;
-    text-align: center;
-    filter:opacity(80%)
-} */
 
 /* TOP TABLE */
 
@@ -77,6 +74,15 @@ img{
 
 /* BUTTONS */
 
+.buttons{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+button:hover{
+    opacity: .7;
+}
+
 .btnY{
     background-color: #0a044e;
     color: #fff;
@@ -92,25 +98,49 @@ img{
     color: #fff;
 }
 
-/* TABLE */
-
-tr, tbody{
-    text-align: center;
-}
 .btn-top{
     float: right;
     margin: 1.2rem 0;
 }
 
-.table td, .table th {
+/* TABLE */
+table{
+    height: 100%;
+}
+tr, tbody{
+    text-align: center;
+}
 
+.table td, .table th {
     vertical-align:inherit;
 }
 
-.buttons{
-    display: flex;
-    justify-content:space-evenly;
+
+/* CONTENT */
+.content{
+    width: 100%;
+    height: 100%;
+    
 }
+.txt-inicial{
+    width: 100%;
+    height: 83vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.txt-inicial h2{
+    width: 50%;
+    font-size: 3.3rem;
+}
+
+.marca{
+    font-size: 3.6rem;
+    color: #6b6d4a;
+}
+
 
 /* FOOTER */
 footer{
@@ -125,11 +155,12 @@ footer span{
     color: #fff;
 }
 
+
 /* media only screen */
 
-@media only screen and (min-width:400px) and (max-width:768px){
+@media only screen and (min-width:300px) and (max-width:570px){
     
-    .container-fluid{
+    /* .container-fluid{
         width: 100vw;
    
     }
@@ -140,6 +171,23 @@ footer span{
 
     h2 .text-center{
         display: flex;
+    } */
+
+    .txt-inicial[_ngcontent-mml-c55] {
+        width: 100%;
+        height: 83vh;
+        display: flex;
+        justify-content:left;
+       align-items: center;
     }
 
+    .txt-inicial h2{
+        width: 100vw;
+        font-size: 2.2rem;
+        
+    }
+
+    .marca{
+        font-size: 2.4rem;
+    }
 }
