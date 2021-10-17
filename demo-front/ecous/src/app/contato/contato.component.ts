@@ -56,7 +56,7 @@ export class ContatoComponent implements OnInit {
     } else {
       this.validEmail = true;
     }
-    if (this.email.indexOf('@')== -1 || this.email.indexOf('.') == -1 || this.email.indexOf('com') == -1 ) {
+    if (this.email.indexOf('@'&&'.')== -1) {
       this.validCaracterEmail = true;
     } else {
       this.validCaracterEmail = false;
@@ -81,7 +81,7 @@ export class ContatoComponent implements OnInit {
 
 
   enviar(event: any) {
-    if(this.validNome == true && this.validMensagem == true && this.validSobrenome == true && this.validEmail == true){
+    if(this.validNome == true && this.validMensagem == true && this.validSobrenome == true && this.validEmail == true && this.validCaracterEmail == false){
       this.alertas.showAlertSuccess('Formulário enviado com sucesso!')
   }else{
     this.alertas.showAlertDanger('Por favor, preencha todos os dados corretamente.')
