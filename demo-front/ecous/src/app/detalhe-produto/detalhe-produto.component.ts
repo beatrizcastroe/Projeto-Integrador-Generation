@@ -7,6 +7,7 @@ import { Pedido } from '../model/Pedido';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { PedidoService } from '../service/pedido.service';
@@ -62,6 +63,7 @@ export class DetalheProdutoComponent implements OnInit {
     private categoriaService: CategoriaService,
     private route: ActivatedRoute,
     private authService: AuthService,
+    private alertas: AlertasService,
 
     /* DADOS CARRINHO USUARIO */
     private pedidoService: PedidoService
@@ -127,7 +129,7 @@ export class DetalheProdutoComponent implements OnInit {
 
     this.produtoService.adicionaItemListaDeDesejos(idProduto, environment.listaDeDesejos).subscribe(() => {
       
-      alert('Produto adicionado a lista de desejos!');
+      this.alertas.showAlertSuccess('Produto adicionado a lista de desejos!');
       console.log("ID Lista: "+ environment.listaDeDesejos);
       console.log("ID Produto: "+ idProduto);
       this.findAllByProdutos();
@@ -145,7 +147,7 @@ export class DetalheProdutoComponent implements OnInit {
       console.log("ID Produto: "+ idProduto);
       this.findByIdProdutosCarrinho();
       this.findByIdProduto(idProduto);
-      alert('Item adicionado ao carrinho');
+      this.alertas.showAlertSuccess('Item adicionado ao carrinho');
 
     })
 
@@ -254,7 +256,7 @@ export class DetalheProdutoComponent implements OnInit {
       
       this.router.navigate(['/produto', idProdutoR])
       // this.router.navigate([`/home`])
-      alert('Usuário logado com sucesso.')
+      this.alertas.showAlertSuccess('Usuário logado com sucesso.')
       
       this.router.navigate(['/produto', idProdutoR])
       this.token = this.tokenUsuario
@@ -265,7 +267,7 @@ export class DetalheProdutoComponent implements OnInit {
 
     }, erro =>{
       if(erro.status == 400){
-        alert('Usuário e/ou senha incorretos.')
+        this.alertas.showAlertDanger('Usuário e/ou senha incorretos.')
       }
     })
   }

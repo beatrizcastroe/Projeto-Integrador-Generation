@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+
+
 
 body{
     width: 100%;
@@ -132,8 +135,9 @@ tr, tbody{
 }
 
 .txt-inicial h2{
-    width: 50%;
+    width: 100%;
     font-size: 3.3rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .marca{
