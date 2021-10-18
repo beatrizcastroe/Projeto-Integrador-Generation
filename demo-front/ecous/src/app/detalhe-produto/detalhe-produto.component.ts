@@ -144,6 +144,7 @@ export class DetalheProdutoComponent implements OnInit {
       console.log("ID Carrinho: "+ environment.pedidos);
       console.log("ID Produto: "+ idProduto);
       this.findByIdProdutosCarrinho();
+      this.findByIdProduto(idProduto);
       alert('Item adicionado ao carrinho');
 
     })

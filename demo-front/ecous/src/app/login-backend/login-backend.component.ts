@@ -32,6 +32,8 @@ export class LoginBackendComponent implements OnInit {
       environment.token = this.userLogin.token
       environment.nome = this.userLogin.nome
       environment.idUsuario = this.userLogin.idUsuario
+      environment.pedidos = this.userLogin.pedidos.id;
+      environment.listaDeDesejos = this.userLogin.listaDeDesejos.id;
 
 
       this.router.navigate(['/backend'])
