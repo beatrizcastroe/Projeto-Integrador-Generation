@@ -6,6 +6,8 @@
         <div class="col-lg-5 pr-lg-5 pr-xl-6 mb-5 mb-lg-0">
           <h6>Cadastre-se em nossa newsletter.</h6>
           <p class="text-sm mb-3">Outro viver é possível.</p>
+
+          <form id="resetF">
           <div class="form-group">
             <label class="form-label" for="emailContact"></label>
             <div class="input-group input-group-underlined mb-3">
@@ -15,12 +17,14 @@
               <div *ngIf="!validEmailNews"><br><span class="validacao"></span></div>
               <div *ngIf="!validCaracterEmail"><br><span class="validacao"></span></div>
               <div class="input-group-append ml-0">
-                <button class="btn btn-underlined tex-gray-700 py-0" type="button submit" (click)="enviar($event)">
+                <button class="btn btn-underlined tex-gray-700 py-0" [disabled]="false"
+                type="submit" (click)="enviar($event)">
                   <a class="text-reset text-hover-primary"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                 </button>
               </div>
             </div>
           </div>
+        </form>
         </div>
         <div class="col-lg-7">
           <div class="row">

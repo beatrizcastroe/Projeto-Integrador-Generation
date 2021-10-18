@@ -128,5 +128,10 @@ export class PagamentoComponent implements OnInit {
 
   }
 
+  pedidofeito(){
+    this.router.navigate(['/home'])
+    alert('Pedido finalizado com sucesso!')
+  }
+
 
 }

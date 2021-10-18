@@ -33,7 +33,12 @@ export class RegisterComponent implements OnInit {
     console.log("confirmarSenha"+ this.confirmarSenha)
  
     if (this.user.senha != this.confirmarSenha) {
-      this.alertas.showAlertDanger ('As senhas estão incorretas.')
+      this.alertas.showAlertDanger ('As senhas estão incorretas.'), error=>
+      
+      {if (error.status == 500) {
+        alert("Este Email ja existe! Por favor utilize um email diferente.")
+      }}
+      
     }
     else {
       this.authService.cadastrar(this.user).subscribe((resp: Usuario) =>{
@@ -41,7 +46,6 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/login'])
         this.alertas.showAlertSuccess('Usuário cadastrado com sucesso')
       })
-
     }
   }
 }

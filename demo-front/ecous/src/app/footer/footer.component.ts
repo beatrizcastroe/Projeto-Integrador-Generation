@@ -57,6 +57,10 @@ export class FooterComponent implements OnInit {
   enviar(event: any) {
     if (this.validEmailNews == true && this.validCaracterEmail == false) {
       this.alertas.showAlertSuccess('E-mail cadastrado com sucesso!')
+      var resetForm:HTMLFormElement;
+resetForm= <HTMLFormElement>document.getElementById('resetF');
+if(resetForm)
+    resetForm.reset();
     } else {
       this.alertas.showAlertDanger('E-mail inválido, tente novamente')
     }
@@ -82,6 +86,7 @@ export class FooterComponent implements OnInit {
   enviarModal(){
     if(this.validMensagem == true && this.validEmailNews == true && this.validCaracterEmail == false){
       this.alertas.showAlertSuccess("Agradeçemos o seu feedback!")
+      
     }else{
       this.alertas.showAlertDanger ("Por favor, digite seu feedback!")
     }

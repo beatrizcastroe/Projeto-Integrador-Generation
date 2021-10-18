@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AlertasService } from '../service/alertas.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class ContatoComponent implements OnInit {
   sobrenome: string;
   email: string;
   mensagem: string;
+  
 
 
   validNome: boolean = false;
@@ -21,10 +23,13 @@ export class ContatoComponent implements OnInit {
   validCaracterEmail:boolean = false;
 
   constructor(
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    
+    
   ) { }
 
   ngOnInit() {
+    
 
   }
 
@@ -67,12 +72,12 @@ export class ContatoComponent implements OnInit {
   getMensagem(event: any) {
     this.mensagem = event.target.value
     if (this.mensagem.length < 1) {
-      this.validMensagem = true;
+      this.validMensagem = false;
       // a ValidMensagem some após o primeiro caracter
     } else {
       this.validMensagem = true;
     }
-    if (this.mensagem.length > 1 && this.mensagem.length < 10) {
+    if (this.mensagem.length > 0 && this.mensagem.length < 10) {
       this.validCaracter = true;
     } else {
       this.validCaracter = false;
@@ -81,8 +86,12 @@ export class ContatoComponent implements OnInit {
 
 
   enviar(event: any) {
-    if(this.validNome == true && this.validMensagem == true && this.validSobrenome == true && this.validEmail == true && this.validCaracterEmail == false){
+    if(this.validNome == true && this.validMensagem == true && this.validSobrenome == true && this.validEmail == true && this.validCaracterEmail == false && this.validCaracter == false){
       this.alertas.showAlertSuccess('Formulário enviado com sucesso!')
+      var resetForm:HTMLFormElement;
+resetForm= <HTMLFormElement>document.getElementById('reset');
+if(resetForm)
+    resetForm.reset();
   }else{
     this.alertas.showAlertDanger('Por favor, preencha todos os dados corretamente.')
   }
