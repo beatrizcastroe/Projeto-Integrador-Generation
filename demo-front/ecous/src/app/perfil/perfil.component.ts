@@ -126,12 +126,7 @@ export class PerfilComponent implements OnInit {
 
   }
 
-  /* VERIFICA SE A SENHA CRIADA E MESMA DE CONFIRME SENHA */
-  confirmeSenha(event: any) {
-    /* ATRIBUI O DADO VINDO DO HTML POR MEIO DO [(ngModel)] A VARIAVEL CRIADA */
-    this.confirmarSenha = event.target.value;
-
-  }
+  
 
   tipoUser(event: any) {
     /* ATRIBUI O DADO VINDO DO HTML POR MEIO DO [(ngModel)] A VARIAVEL CRIADA */

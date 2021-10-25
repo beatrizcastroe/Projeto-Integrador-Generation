@@ -55,14 +55,14 @@ tbody tr:hover{
 }
 
 
-/* H2 */
+
 
 h2{
     font-weight: 300;
 }
 
 
-/* TOP TABLE */
+
 
 .content-top{
     display: flex;
@@ -75,7 +75,7 @@ h2{
     font-size: 1.2rem;
 }
 
-/* BUTTONS */
+
 
 .buttons{
     display: flex;
@@ -106,7 +106,7 @@ button:hover{
     margin: 1.2rem 0;
 }
 
-/* TABLE */
+
 table{
     height: 100%;
 }
@@ -119,7 +119,7 @@ tr, tbody{
 }
 
 
-/* CONTENT */
+
 .content{
     width: 100%;
     height: 100%;
@@ -146,7 +146,7 @@ tr, tbody{
 }
 
 
-/* FOOTER */
+
 footer{
     height: 10vh;
     display: flex;
@@ -160,22 +160,9 @@ footer span{
 }
 
 
-/* media only screen */
+
 
 @media only screen and (min-width:300px) and (max-width:570px){
-    
-    /* .container-fluid{
-        width: 100vw;
-   
-    }
-     .row{
-        width: 20vw;
-        display: flex;
-    }
-
-    h2 .text-center{
-        display: flex;
-    } */
 
     .txt-inicial[_ngcontent-mml-c55] {
         width: 100%;
