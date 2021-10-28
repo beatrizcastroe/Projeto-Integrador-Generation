@@ -17,7 +17,7 @@
 <br>
 
 <h2>🎇 Sobre a Ecous:</h2>
-<h6>Acreditamos que outro viver é possível. Que podemos cuidar da terra com o amor e
+<h4>Acreditamos que outro viver é possível. Que podemos cuidar da terra com o amor e
 carinho que ela cuida de nós.Fundada baseando seus princípios comerciais no projeto ODS (Objetivos de
 Desenvolvimento Sustentável) - da Organização das Nações Unidas, pensamos em como poderiamos combater as
 mudanças climáticas e seus impactos, e ainda assim oferecer produtos personalizados e com controle de qualidade
@@ -25,32 +25,37 @@ que só a Ecous pensaria.Como é feito esse controle de qualidade ? Simples, sel
 e marcas de produtos ecologicamente corretos e que possuem embalagens não prejudiciais ao meio ambiente e os
 vendemos aqui. Além de adquirirem produtos conscientes, a preços justos, essas vendas são convertidas em mudas
 de árvores nativas da floresta Amazônica.
-</h6>
+</h4>
 
 <br>
 
-<h2>🔗 Links:<h2>
+<h2>🔗 Links:</h2>
 
 
-<h4> <a href="https://drive.google.com/file/d/14EJ8_X7hctSv70RYg18UfN5DTdiifHf5/view">Wireframe</a></h4>
+<h3> <a href="https://drive.google.com/file/d/14EJ8_X7hctSv70RYg18UfN5DTdiifHf5/view">Wireframe</a></h3>
 
-<h4> <a href="https://projetointegradorg1.herokuapp.com/">Deploy-Heroku</a></h4>
 
-<h4> <a href="#">Netlify</a> (Em breve)</h4>
+<h3> <a href="https://ecous.netlify.app/home">Ecous</a></h3>
 
-  <br>
+<br>
 
 <h2>🌱 Projeto (muda)nça</h2>
 
-<h6>Pequenas ações, grandes impactos. Uma muda e já não estamos no mesmo lugar. Nosso projeto é fazer com que nossos clientes olhem para a Terra com outros olhos,com amor e esperança, por isso 40% do valor de suas compras será convertido pra compra de mudas nativas da floresta Amazônica, pensando em um futuro em que o desmatamento não será mais uma realidade, em que a poluição atmosférica será revertida e o clima será mais agradável para nós e para as próximas gerações.</h6>
-<b>Toda gentileza ao meio ambiente, a natureza agradece!</b></h3>
+<h4>Pequenas ações, grandes impactos. Uma muda e já não estamos no mesmo lugar. Nosso projeto é fazer com que nossos clientes olhem para a Terra com outros olhos,com amor e esperança, por isso 40% do valor de suas compras será convertido pra compra de mudas nativas da floresta Amazônica, pensando em um futuro em que o desmatamento não será mais uma realidade, em que a poluição atmosférica será revertida e o clima será mais agradável para nós e para as próximas gerações.
+Toda gentileza ao meio ambiente, a natureza agradece!</h4>
 
 <br>
 
-<h2>📷 Screenshot:<h2>
+<h2>📷 Preview</h2>
+<h3>Desktop:</h3>
+<img src="https://user-images.githubusercontent.com/80595156/139321661-1c596863-5f66-45b9-a25f-e9b4536d3ad0.gif">
 
+<br>
 
-<h4>(Em breve)</h4>
+<h3>Mobile:</h3>
+
+![mobile](https://user-images.githubusercontent.com/80595156/139313878-dd7ba55e-eb9a-4c25-be74-2eafdf4a981f.gif)
+
 
 <br>
 
@@ -105,30 +110,32 @@ de árvores nativas da floresta Amazônica.
 
 <h2>💙 Nossos parceiros: </h2>
 
-<h3>Confira abaixo nossas lojas parceiras, que se ergueram com os mesmos princípios e a sede de mudança em que a <b>eco</b>us foi criada:</h3>
+<h4>Confira abaixo nossas lojas parceiras, que se ergueram com os mesmos princípios e a sede de mudança em que a <b>eco</b>us foi criada:</h4>
 
 <br>
 
 <table align="center">
   <tr>
     <td align="center">
-    <img  src="https://i.imgur.com/zLKkg0Y.png" style="width: 100px; border-radius: 5%">
-    <h4><b>Action for Life</b></h4>
+    <img  src="https://i.imgur.com/zLKkg0Y.png" style="width: 100px; border-radius: 50%">
+    <a href="https://action-for-life.netlify.app/home"><h4><b>Action for Life</b></h4></a>
     <td align="center">
-    <img  src="https://i.imgur.com/hFWHZnf.png" style="width: 100px; border-radius: 5%">
-    <h4><b>Baependi</b></h4>
+    <img  src="https://i.imgur.com/XGwweaU.png" style="width: 100px; border-radius: 50%">
+    <a href="https://baependi.netlify.app/inicio"><h4><b>Baependi</b></h4></a>
     <td align="center">
-    <img  src="https://i.imgur.com/thqqpui.png" style="width: 100px; border-radius: 5%">
-    <h4><b>Gaia Ecommerce</b></h4>
+    <img  src="https://i.imgur.com/thqqpui.png" style="width: 100px; border-radius: 50%">
+    <a href="https://projetogaia.netlify.app/home"><h4><b>Gaia Ecommerce</b></h4></a>
+    </tr>
+    <tr>
    <td align="center">
-    <img  src="https://i.imgur.com/jkapNNHh.jpg" style="width: 100px; border-radius: 5%">
-    <h4><b>Generation</b></h4>
+    <img  src="https://i.imgur.com/jkapNNHh.jpg" style="width: 100px; border-radius: 50%">
+    <a href="https://brazil.generation.org/"><h4><b>Generation</b></h4></a>
     <td align="center">
-    <img  src="https://i.imgur.com/OFzlA2N.png" style="width: 100px; border-radius: 5%">
-    <h4><b>Climatika</b></h4>
+    <img  src="https://i.imgur.com/OFzlA2N.png" style="width: 100px; border-radius: 50%">
+    <a href="https://climatika-store.netlify.app/inicio"><h4><b>Climatika</b></h4></a>
     <td align="center">
-    <img  src="https://i.imgur.com/4c5NzcX.png" style="width: 100px; border-radius: 5%">
-    <h4><b>Eco.Book</b></h4>
+    <img  src="https://i.imgur.com/4c5NzcX.png" style="width: 100px; border-radius: 50%">
+    <a href="https://ecobookproject.netlify.app/#/home"><h4><b>Eco.Book</b></h4></a>
   </tr>
 </table>
 
@@ -140,7 +147,7 @@ de árvores nativas da floresta Amazônica.
 
 <table>
   <tr>
-  <td align="center"><img style="width: 70%; border-radius: 5%" 
+  <td align="center"><img style="width: 70%; border-radius: 50%" 
   src="https://avatars.githubusercontent.com/u/87526945?v=4"
    alt="Ana Lima"/><br /><sub style="font-size: 14px"><b>Ana Lima 🧐</b></sub><br /> 
   <a href="https://www.linkedin.com/in/ana-carolline-lima-b51701213/" alt="Linkedin">
@@ -149,7 +156,7 @@ de árvores nativas da floresta Amazônica.
   </a>
 
 
-  <td align="center"><img style="width: 70%; border-radius: 5%"
+  <td align="center"><img style="width: 70%; border-radius: 50%"
   src="https://avatars.githubusercontent.com/u/88193030?v=4" 
   alt="Beatriz Castro"/><br /><sub><b>Beatriz Castro 😉</b></sub></a><br /> 
   <a href="https://www.linkedin.com/in/beatrizcastroe/" alt="Linkedin">
@@ -157,7 +164,7 @@ de árvores nativas da floresta Amazônica.
 <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/beatrizcastroe/"  style= "width:90px;"/>
   </a>
 
-  <td align="center"><img style="width: 70%; border-radius: 5%"
+  <td align="center"><img style="width: 70%; border-radius: 50%"
   src="https://avatars.githubusercontent.com/u/88200400?v=4" 
   alt=""/><br /><sub><b>Bárbara Ferreira 😊</b></sub></a><br />
   <a href="https://www.linkedin.com/in/b%C3%A1rbaracfs/" alt="Linkedin">
@@ -166,14 +173,14 @@ de árvores nativas da floresta Amazônica.
   </a>
   </tr>
   <tr>
-  <td align="center"><img style="width: 70%; border-radius: 5%"
+  <td align="center"><img style="width: 70%; border-radius: 50%"
   src="https://avatars.githubusercontent.com/u/88197248?v=4"  alt=""/><br /><sub><b>Bruno Daniel 🤩</b></sub></a><br />
    <a href="https://www.linkedin.com/in/bruno-daniel-b6289021b/" alt="Linkedin">
   <br>
   <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/bruno-daniel-b6289021b/"  style= "width:90px;"/>
   </a>
 
-  <td align="center"><img style="width: 70%; border-radius: 5%" 
+  <td align="center"><img style="width: 70%; border-radius: 50%" 
   src="https://avatars.githubusercontent.com/u/80595156?v=4" 
   alt=""/><br /><sub><b>Bruno Luna 😁</b></sub></a><br />
   <a href="https://www.linkedin.com/in/bruno-luna-11590720a/" alt="Linkedin">
@@ -181,7 +188,7 @@ de árvores nativas da floresta Amazônica.
   <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/bruno-luna-11590720a/"  style= "width:90px;"/>
   </a>
 
-  <td align="center"><img style="width: 70%; border-radius: 5%" 
+  <td align="center"><img style="width: 70%; border-radius: 50%" 
   src="https://avatars.githubusercontent.com/u/83474842?v=4" 
    alt=""/><br /><sub><b>Diego Silva 😎</b></sub></a><br />
   <a href="https://www.linkedin.com/in/diego-silva-2479711a7/" alt="Linkedin">
@@ -191,5 +198,5 @@ de árvores nativas da floresta Amazônica.
   </tr>
 </table>
 
-<h3 align="center">A Ecous foi desenvolvida com muito ❤️</h3>
+<h4 align="center">A Ecous foi desenvolvida com muito ❤️</h4>
 
